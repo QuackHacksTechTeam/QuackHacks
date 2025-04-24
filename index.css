@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --primary-color: #00693e;
   --secondary-color: #a3d9b0;
@@ -20,20 +24,25 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navContainer{
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0px;
 }
 .navBar {
     display: flex;
     justify-content: space-evenly;
+    align-content: center;
     align-items: center;
     list-style-type: none;
     background-color: var(--background-black);
-    width: 75%;
+    width: 100%;
     padding: 5px;
-    margin-top: 15px;
-    border-radius: 20px;
 }
 
 .navTitle{
@@ -41,38 +50,102 @@ body {
     text-decoration: none;
 }
 
-.terminal {
-    font-family: monospace;
+.navTitle:hover {
+    background-color: green;
+    text-decoration: none; 
+  }
+
+
+  .terminal {
     font-size: 2rem;
     color: var(--terminal-green);
     display: flex;
   }
   
-  .typed-text {
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    border-right: none;
-    animation: typing 3s steps(15) forwards;
-    width: 0;
-  }
-  
   .cursor {
     color: var(--terminal-green);
-    animation: blink 0.7s steps(1) infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 15ch }
+    animation: blink 1.5s steps(1) infinite; 
   }
   
   @keyframes blink {
     50% { opacity: 0; }
   }
   
-  /* Stop blinking after typing ends */
-  .terminal.typed-done .cursor {
-    animation: none;
-    opacity: 0;
+  .typed-text {
+  display: inline-block;
+  width: 14ch; 
+  font-style: italic;
+  overflow: hidden;
+}
+
+  .typed-text::after {
+    content: ">>> quackhacks";
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 0.7s steps(14) forwards;
+    font-style: italic;
   }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 14ch } 
+  }
+
+.scramble {
+    display: inline-block;
+    position: relative;
+}
+
+#home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f4f4;
+}
+
+#about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  
+}
+
+#about h1{
+  font-weight: bold;
+}
+#about p {
+  font-size: 20px;
+}
+
+#projects{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.carouselContainer{
+  width: 60%;
+  height: 60%;
+  z-index: -1;
+}
+
+#home, #about, #projects, #faq, #contacts, #team {
+  padding-top: 45px; /* Adjust this value based on your navbar height */
+  margin-top: -50px; /* This offsets the padding to maintain visual layout */
+}
+
+.sections{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.questions{
+  background-color: aqua;
+}
