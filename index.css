@@ -1,16 +1,13 @@
 /* Using Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  width: 100%;
 }
 
-
-html {
-  scroll-behavior: smooth;
-}
 :root {
   --primary-color: #00693e;
   --secondary-color: #a3d9b0;
@@ -22,6 +19,7 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: #f6f4f4;
 }
 
 a {
@@ -33,6 +31,7 @@ a {
     justify-content: center;
     position: sticky;
     top: 0px;
+    width: 100%;
 }
 .navBar {
     display: flex;
@@ -103,49 +102,51 @@ a {
   align-items: center;
   justify-content: center;
   background-color: #f6f4f4;
+  padding: 45px;
+  margin: -10px;
 }
 
-#about{
+#logo{
+  height: 400px;
+  width: 600px;
+  margin: -60px;
+}
+
+.memberContainer{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  flex-wrap: wrap;
+  margin: px;
+}
+
+.pictureCard{
+  background-color: #E6E6FA;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  
-}
-
-#about h1{
-  font-weight: bold;
-}
-#about p {
-  font-size: 20px;
-}
-
-#projects{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  border: transparent;
+  border-style: solid;
 }
 
-.carouselContainer{
-  width: 60%;
-  height: 60%;
-  z-index: -1;
+.memberPictures{
+  height: 250px;
+  width: 175px;
+  border-radius: 25px 25px 0px 0px;
 }
 
-#home, #about, #projects, #faq, #contacts, #team {
-  padding-top: 45px; /* Adjust this value based on your navbar height */
-  margin-top: -50px; /* This offsets the padding to maintain visual layout */
+div.pictureCard > h4, div.pictureCard > h5{
+  margin: 10px;
 }
 
-.sections{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.icons{
+  width: 35px;
 }
-.questions{
-  background-color: aqua;
+
+.pictureCard:hover{
+  border-style: solid;
+  border-color: #00A3A3;
 }
