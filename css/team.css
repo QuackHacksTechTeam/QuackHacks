@@ -16,54 +16,30 @@
   margin-top: 100px
 }
 
-.memberContainer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
-  gap: 25px; /* Consistent gap in all directions */
-  width: 90%;
-  margin: 30px auto;
+.memberContainer{
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 100%;
+  flex-wrap: wrap;
+  margin: 35px;
 }
 
-.pictureCard {
-  /* Remove any width settings to let grid control sizing */
+.pictureCard{
   background-color: #E6E6FA;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 25px;
+  margin-bottom: 10px;
   border: transparent;
   border-style: solid;
-  min-width: 175px;
-  width: 100%;
-  
 }
 
-.memberPictures {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.memberPictures{
+  height: 280px;
+  width: 200px;
   border-radius: 25px 25px 0px 0px;
-  max-width: 100%; /* Ensures image doesn't overflow */
-  display: block; /* Removes any inline styling issues */
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .memberContainer {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
-  }
-}
-
-@media (max-width: 800px) {
-  .memberContainer {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-  }
-}
-
-@media (max-width: 500px) {
-  .memberContainer {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-  }
 }
 
 div.pictureCard > h4, div.pictureCard > h5{
