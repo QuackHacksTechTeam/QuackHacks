@@ -44,39 +44,6 @@ function questionOpen(){
 });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Get the current page URL
-  const currentPath = window.location.pathname;
-  
-  // Extract page name from path (or use the whole path if simpler)
-  const currentPage = currentPath.split('/').pop() || 'index.html';
-  
-  const pages = document.querySelectorAll(".navTitle");
-  
-  // First set all to default color
-  pages.forEach(pg => {
-    pg.style.color = '#FFFFE0';
-  });
-  
-  // Find and highlight the current page
-  pages.forEach(page => {
-    // Get the href attribute from the page link
-    const pageHref = page.getAttribute('href') || '';
-    // If this link points to the current page, highlight it
-    if (pageHref.includes(currentPage) || 
-        (currentPage === 'index.html' && pageHref.includes('home'))) {
-      page.style.color = '#FFD700';
-    }
-    
-    // Still maintain the click event for SPA-like behavior
-    page.addEventListener('click', () => {
-      pages.forEach(pg => {
-        pg.style.color = '#FFFFE0';
-      });
-      page.style.color = '#FFD700';
-    });
-  });
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".roleFilter");
