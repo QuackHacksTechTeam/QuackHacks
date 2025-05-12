@@ -15,7 +15,7 @@
   --dark-pine: #02130b;
   --third-color: #c6d89a;
   --test-lightgreen: #FFFFE0; /* Light yellow, almost white */
-  --accent-color: #84c2e2;
+  --accent-color: rgb(132, 194, 226);
   --accent-color2: #d3efe8;
   --background-light: #FEFED3;
   --background-light2: #f7f1d9;
@@ -135,6 +135,54 @@ body {
   max-width: 500px; /* Adjust as needed, was 600px */
   /* margin: -50px; This can cause layout issues, use padding on parent or regular margins */
   margin-bottom: 20px; /* Example */
+}
+
+.missionCenter {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.missionContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Important for responsiveness */
+  max-width: 1100px;
+  width: 100%;
+}
+
+#teampic {
+  height: auto;
+  width: 45%;
+  max-width: 500px; /* Allows it to grow a bit more on larger screens */
+  border-radius: 12px;
+  /*border: 4px solid var(--accent-color2); /* Light teal border */
+  background-color: white;  /*Optional: adds contrast behind transparent images */
+  padding: 5px; /* Space between image and border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+.missionText {
+  flex: 1;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 250px;
+  
+}
+
+.missionText h1 {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  color: var(--primary-color) !important;
+  margin-bottom: 15px;
+}
+
+.missionText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--dark-pine);
 }
 
 .homeText, .fall {
