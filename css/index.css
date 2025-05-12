@@ -54,7 +54,6 @@ body {
   height: 8%;
   padding: 5px;
   border-radius: 25px;
-  position: fixed;
   top: 0;
   z-index: 1;
 }
@@ -126,10 +125,92 @@ body {
   margin: -50px;
 }
 
-
-
 .homeText, .fall {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   font-size: 3rem; 
   font-weight: bold;
+}
+
+.missionCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.roles {
+  list-style-type: none; 
+  flex-wrap: wrap;
+}
+
+.rolesList{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.rolesCenter{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px
+}
+
+.memberContainer{
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 100%;
+  flex-wrap: wrap;
+  margin: 35px;
+  background-color: #00A3A3;
+}
+
+.pictureCard{
+  background-color: #E6E6FA;
+  display: flex;
+  flex-direction: column;
+  width: 0px;
+  align-items: center;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  border: transparent;
+  border-style: solid;
+}
+
+.memberPictures{
+  height: 240px;
+  width: 160px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+div.pictureCard > h4, div.pictureCard > h5{
+  margin: 10px;
+}
+
+.icons{
+  width: 35px;
+}
+
+.pictureCard:hover{
+  border-style: solid;
+  border-color: #00A3A3;
+}
+
+.roleFilter {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.teamColumn{
+  align-self: flex-start;
 }
