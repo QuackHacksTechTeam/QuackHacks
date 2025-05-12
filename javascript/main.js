@@ -97,9 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
           picture.style.display = "";
           visibleCount++;
         }
-        else if(button.innerHTML == picture.dataset.role){
-          picture.style.display = "";
-          visibleCount++;
+        //else if(button.innerHTML == picture.dataset.role){
+        //  picture.style.display = "";
+        //  visibleCount++;
+        //}
+        else if(picture.dataset.role.split(" ").includes(button.innerHTML)){
+        picture.style.display = "";
+        visibleCount++;
         }
         else{
           picture.style.display = "none";

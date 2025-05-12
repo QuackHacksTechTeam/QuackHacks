@@ -8,17 +8,17 @@
 }
 
 :root {
-  --primary-color: #276d27;
-  --secondary-color: #1c3511;
+  --primary-color: rgb(39, 109, 39);
+  --secondary-color: rgb(28, 53, 17);
   --spruce-green: #0d4e50;
   --coral: #FFD700; /* Gold color, not coral red */
   --dark-pine: #02130b;
-  --third-color: #c6d89a;
+  --third-color: rgb(198, 216, 154);
   --test-lightgreen: #FFFFE0; /* Light yellow, almost white */
-  --accent-color: rgb(132, 194, 226);
+  --accent-color: #84c2e2;
   --accent-color2: #d3efe8;
   --background-light: #FEFED3;
-  --background-light2: #f7f1d9;
+  --background-light2: rgb(247, 241, 217);
   --background-light3: #FCFBE3;
   --terminal-green: #00FF00;
   --background-black: #000000;
@@ -30,8 +30,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(
-    rgba(247,241,217, 0.6),
-    rgba(247,241,217, 0.6)
+    rgba(233, 255, 206, 0.6),
+    rgba(233, 255, 206, 0.6)
   ), url('../images/home.JPG'); /* Ensure this path is correct */
   background-size: cover;
   background-attachment: fixed;
@@ -64,27 +64,27 @@ body {
 }
 
 .navTitle{
-    color: var(--test-lightgreen);
+    color: var(--third-color);
     text-decoration: none;
     padding: 5px 10px; /* Add some padding for better clickability */
     font-family: 'Montserrat', sans-serif; /* Example: Using Montserrat for nav titles */
 }
 
 .navTitle:hover {
-    color: var(--coral)
+    color: var(--accent-color)
 }
 
 
 .terminal {
   font-size: 1.5rem; /* Adjusted for responsiveness */
-  color: var(--test-lightgreen);
+  color: var(--third-color);
   display: flex;
   align-items: center; /* Vertically align cursor with text */
   margin-right: auto; /* Pushes other nav items to the right if desired */
 }
 
 .cursor {
-  color: var(--test-lightgreen);
+  color: var(--third-color);
   animation: blink 1.5s steps(1) infinite;
 }
 
@@ -132,9 +132,9 @@ body {
 #logo{
   height: auto; /* Let width control aspect ratio */
   width: 100%;
-  max-width: 500px; /* Adjust as needed, was 600px */
+  max-width: 600px; /* Adjust as needed, was 600px */
   /* margin: -50px; This can cause layout issues, use padding on parent or regular margins */
-  margin-bottom: 20px; /* Example */
+  margin-bottom:1px; /* Example */
 }
 
 .missionCenter {
@@ -177,6 +177,7 @@ body {
   font-size: clamp(2.2rem, 6vw, 3.2rem);
   color: var(--primary-color) !important;
   margin-bottom: 15px;
+  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
 }
 
 .missionText p {
@@ -187,14 +188,20 @@ body {
 
 .homeText, .fall {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; /* Consider using your Google Fonts */
-  font-size: clamp(2rem, 6vw, 3rem); /* Responsive font size */
+  font-size: clamp(2.3rem, 6.3vw, 3.3rem); /* Responsive font size */
   font-weight: bold;
-  color: var(--dark-pine); /* Example color */
-}
-.fall{
-    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Slightly smaller for subtitle */
+  color: var(--primary-color); /* Example color */
+  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1), -2px -2px 0 rgba(198, 216, 154, 1);
 }
 
+.fall{
+    font-size: clamp(1.1rem, 3.4vw, 2.0rem); /* Slightly smaller for subtitle */
+    color: var(--dark-pine);
+    text-shadow: 0px 0px 0 rgba(132, 194, 226, 0.0);
+}
+/*132, 194, 226*/
+/*28, 53, 17*/
+/*198, 216, 154*/
 
 .missionCenter{
   display: flex;
@@ -235,12 +242,15 @@ body {
 
 #team.teamColumn .titlesLeft {
     font-family: 'Montserrat', sans-serif;
-    color: var(--background-light3); /* Make titles visible on dark background */
+    color: var(--dark-pine); /* Make titles visible on dark background */
+    /*text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);*/
 }
 
 #team.teamColumn h1.titlesLeft{
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 0.5em;
+    color: var(--primary-color) !important;
+    text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
 }
 #team.teamColumn h2.titlesLeft{
     font-size: clamp(1.2rem, 3vw, 1.8rem);
@@ -281,7 +291,7 @@ body {
 }
 
 .pictureCard{
-  background-color: var(--picture-card-bg);
+  background-color: var(--background-light3);
   display: flex;
   flex-direction: column;
   /* width: 200px; -- Changed from 0px, use a fixed or responsive width */
@@ -291,8 +301,8 @@ body {
   border-radius: 15px; /* Soften radius */
   /* margin-bottom: 10px; -- Handled by gap on .memberContainer */
   border: 2px solid transparent; /* Keep border for hover effect consistency */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Added subtle shadow */
-  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  /*box-shadow: 0 4px 8px rgba(0,0,0,0.6); /* Added subtle shadow */
+  transition: transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease; /* Smooth transitions */
   overflow: hidden; /* Ensure content respects border-radius */
 }
 
@@ -328,8 +338,12 @@ div.pictureCard > h5{
 }
 
 .pictureCard:hover{
-  border-color: var(--member-container-bg); /* Use a theme color for hover */
-  transform: translateY(-5px); /* Slight lift effect */
+  /*border-color: var(--primary-color); /* Use a theme color for hover */
+  /*border-width: 4px;*/
+  /*transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 6px 6px 0 rgba(39, 109, 39, 1); /* bottom-right shadow only */
+  transform: translate(-2px, -2px); /* subtle lift toward top-left */
+  transition: transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease, box-shadow 0.3s ease;
 }
 
 .roleFilter {
@@ -346,14 +360,45 @@ div.pictureCard > h5{
   border-radius: 20px; /* Rounded buttons */
 }
 .roleFilter:hover, .roleFilter.active { /* Style for active filter */
-  background-color: var(--secondary-color);
-  color: var(--test-lightgreen);
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
 }
 
 /* Ensure titlesLeft is only used where needed, or make it more generic */
 /* .teamColumn { */
   /* align-self: flex-start; -- Not needed with the new wrapper and flex settings */
 /* } */
+.faqSection {
+  padding: 60px 20px;
+  /*background-color: var(--background-light3);*/
+  text-align:center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faqSection h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
+}
+
+.faqItem {
+  margin-bottom: 25px;
+}
+
+.faqItem h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-pine);
+  margin-bottom: 5px;
+}
+
+.faqItem p {
+  font-size: 1rem;
+  color: var(--dark-pine);
+  line-height: 1.6;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
