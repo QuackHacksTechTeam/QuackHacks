@@ -216,7 +216,6 @@ body {
   /* Individual li doesn't need flex-wrap, parent does */
 }
 
-
 .memberContainer{
   display: flex;
   justify-content: center; /* Center cards if they don't fill the row */
@@ -238,7 +237,8 @@ body {
   display: flex;
   flex-direction: column;
   /* width: 200px; -- Changed from 0px, use a fixed or responsive width */
-  width: 220px; /* Example fixed width, or use flex-basis for responsiveness */
+  width: 180px; /* Example fixed width, or use flex-basis for responsiveness */
+  min-width: 140px;
   align-items: center;
   border-radius: 15px; /* Soften radius */
   /* margin-bottom: 10px; -- Handled by gap on .memberContainer */
@@ -250,7 +250,7 @@ body {
 
 
 .memberPictures{
-  height: 250px; /* Adjusted height */
+  height: 200px; /* Adjusted height */
   width: 100%; /* Make picture fill the card width */
   object-fit: cover; /* Ensures image covers the area without distortion */
   /* border-radius: 25px 25px 0px 0px; -- Removed, parent .pictureCard handles rounding */
