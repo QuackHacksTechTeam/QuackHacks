@@ -224,7 +224,7 @@ body {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap; /* This might not be needed if stacking column */
-  margin-top: 50px;
+  margin-top: 5px;
   padding: 20px 0;
   width: 100%;
 }
@@ -368,7 +368,7 @@ div.pictureCard > h5{
 
 .faqItem {
   margin-bottom: 25px;
-  text-align: left; /* Align Q&A text to the left for readability */
+  text-align: center; /* Align Q&A text to the left for readability */
 }
 
 .faqItem h3 {
