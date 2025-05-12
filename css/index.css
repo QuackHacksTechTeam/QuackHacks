@@ -133,8 +133,8 @@ body {
   height: auto; /* Let width control aspect ratio */
   width: 100%;
   max-width: 600px; /* Adjust as needed, was 600px */
-  /* margin: -50px; This can cause layout issues, use padding on parent or regular margins */
-  margin-bottom:1px; /* Example */
+  margin: -100px; /*This can cause layout issues, use padding on parent or regular margins */
+  margin-bottom:-20px; /* Example */
 }
 
 .missionCenter {
@@ -188,7 +188,7 @@ body {
 
 .homeText, .fall {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; /* Consider using your Google Fonts */
-  font-size: clamp(2.3rem, 6.3vw, 3.3rem); /* Responsive font size */
+  font-size: clamp(3.2rem, 7vw, 4rem); /* Responsive font size */
   font-weight: bold;
   color: var(--primary-color); /* Example color */
   text-shadow: 2px 2px 0 rgba(28, 53, 17, 1), -2px -2px 0 rgba(198, 216, 154, 1);
@@ -198,6 +198,7 @@ body {
     font-size: clamp(1.1rem, 3.4vw, 2.0rem); /* Slightly smaller for subtitle */
     color: var(--dark-pine);
     text-shadow: 0px 0px 0 rgba(132, 194, 226, 0.0);
+    font-size: clamp(1.8rem, 5.8vw, 2.8rem);
 }
 /*132, 194, 226*/
 /*28, 53, 17*/
