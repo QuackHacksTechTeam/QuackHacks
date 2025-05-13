@@ -58,18 +58,26 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between; /* Changed from space-evenly */
   align-items: center;
-  list-style-type: none;
   background-color: var(--secondary-color);
-  width: 90%; /* Increased width for better spacing on medium screens */
-  max-width: 1100px; /* Adjusted max-width */
-  padding: 10px 15px;
+  width: 90%;
+  max-width: 1100px;
+  padding: 10px 20px; /* Adjusted padding */
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative; /* For potential absolute positioning of dropdown */
 }
 
-.navBar li { /* Target li for spacing if needed */
+.nav-links { /* Style for the new ul wrapper */
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
     margin: 0 5px;
 }
 
@@ -79,13 +87,13 @@ body {
   padding: 8px 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  transition: color 0.3s ease;
-  border-radius: 5px; /* Slight rounding for hover feedback area */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+  border-radius: 5px;
 }
 
 .navTitle:hover {
   color: var(--accent-color);
-  background-color: rgba(255,255,255,0.1); /* Subtle hover background */
+  background-color: rgba(255,255,255,0.1);
 }
 
 .terminal {
@@ -93,8 +101,8 @@ body {
   color: var(--third-color);
   display: flex;
   align-items: center;
-  margin-right: auto;
-  padding-left: 10px; /* Give some space from edge */
+  /* margin-right: auto; Removed to allow space-between to work effectively */
+  padding-left: 10px;
 }
 
 .cursor {
@@ -120,13 +128,43 @@ body {
   to { width: 14ch; }
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--third-color);
+    margin-bottom: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
 /* Home Section Styles */
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 45px 20px 60px 20px; /* Added more bottom padding */
+  padding: 45px 20px 60px 20px;
   margin-top: 20px;
   text-align: center;
 }
@@ -155,15 +193,15 @@ body {
   color: var(--dark-pine);
   font-weight: 500;
   text-shadow: 1px 1px 0 rgba(198, 216, 154, 0.5);
-  margin-top: 10px; /* Space below "QuackHacks Lite:" */
+  margin-top: 10px;
 }
 
 /* Shared Section Title Styles */
 .section-title-shared {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3rem); /* Adjusted clamp slightly */
+  font-size: clamp(2.2rem, 5vw, 3rem);
   color: var(--primary-color);
-  margin-bottom: 40px; /* Consistent bottom margin for titles */
+  margin-bottom: 40px;
   text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
   text-align: center;
 }
@@ -171,13 +209,12 @@ body {
 /* Mission Section Styles */
 .missionCenter {
   display: flex;
-  flex-direction: column; /* Stack title above content */
+  flex-direction: column;
   align-items: center;
   padding: 60px 20px;
   width: 100%;
 }
 
-/* For the H1 "Our Mission" IF it's directly in .missionCenter and NOT .section-title-shared */
 .missionCenter > h1:not(.section-title-shared) {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2.2rem, 6vw, 3.2rem);
@@ -187,7 +224,7 @@ body {
 
 .missionContent {
   display: flex;
-  align-items: center; /* Vertically align image and text */
+  align-items: center;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
@@ -196,7 +233,7 @@ body {
 }
 
 #teampic {
-  flex-shrink: 0; /* Prevent image from shrinking too much */
+  flex-shrink: 0;
   height: auto;
   width: 100%;
   max-width: 450px;
@@ -216,11 +253,10 @@ body {
   max-width: 600px;
 }
 
-/* This H1 is inside .missionText so it's distinct */
 .missionText > h1.section-title-shared {
-    text-align: left; /* Override if needed */
+    text-align: left;
     margin-bottom: 20px;
-    font-size: clamp(2rem, 5vw, 2.6rem); /* Slightly smaller than main section titles */
+    font-size: clamp(2rem, 5vw, 2.6rem);
 }
 
 
@@ -239,18 +275,17 @@ body {
 .faqSection {
   padding: 60px 20px;
   max-width: 900px;
-  margin: 0 auto; /* Center the section */
-  text-align:center; /* Ensures h1 is centered if not overridden */
+  margin: 0 auto;
+  text-align:center;
 }
-/* .faqSection > h1 is now handled by .section-title-shared */
 
 .faqItem {
-  background-color: #ffffff; /* White background like the image */
-  border: 1px solid #e0e0e0;   /* Lighter border for items */
-  border-radius: 10px;       /* More rounded corners */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   margin-bottom: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
-  overflow: hidden; /* For max-height transition */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 .faqQuestion {
@@ -259,11 +294,11 @@ body {
   width: 100%;
   background-color: transparent;
   border: none;
-  padding: 18px 20px; /* Increased padding */
+  padding: 18px 20px;
   text-align: left;
   font-family: 'Montserrat', sans-serif;
   color: var(--dark-pine);
-  font-size: 1.15rem; /* Slightly larger question font */
+  font-size: 1.15rem;
   font-weight: 500;
   cursor: pointer;
   outline: none;
@@ -271,25 +306,24 @@ body {
 }
 
 .faqQuestion:hover {
-  background-color: #f7f7f7; /* Subtle hover for the whole bar */
+  background-color: #f7f7f7;
 }
 
 .faqIcon {
   margin-right: 15px;
-  font-size: 1.3em; /* Adjusted */
+  font-size: 1.3em;
   font-weight: bold;
   color: var(--primary-color);
   transition: transform 0.3s ease-out;
-  display: inline-block; /* For transform to work correctly */
+  display: inline-block;
 }
 
 .faqQuestion[aria-expanded="true"] .faqIcon {
-  transform: rotate(45deg); /* Makes '+' look like 'x' */
+  transform: rotate(45deg);
 }
 
 .faqAnswer {
-  /* Padding set by JS during animation for smoother effect */
-  padding: 0px 20px 0px 55px; /* Left padding = icon margin + icon width approx + some space */
+  padding: 0px 20px 0px 55px;
   font-size: 1rem;
   color: var(--dark-pine);
   line-height: 1.6;
@@ -299,8 +333,8 @@ body {
 }
 
 .faqAnswer p {
-    margin: 0; /* Remove default p margin if it's direct child */
-    padding-bottom: 0px; /* Add padding when content is shown via JS */
+    margin: 0;
+    padding-bottom: 0px;
 }
 
 
@@ -313,14 +347,13 @@ body {
   text-align: center;
   width: 100%;
 }
-/* .suppContainer > h1.titlesLeft is now covered by .section-title-shared */
 
 .centerSupp {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px; /* Increased gap */
+  gap: 40px;
   width: 100%;
   max-width: 1000px;
   margin-top: 20px;
@@ -350,8 +383,8 @@ body {
 .suppInput {
   width: 100%;
   padding: 12px 15px;
-  margin: 10px 0; /* Increased vertical margin */
-  border-radius: 8px; /* Consistent rounding */
+  margin: 10px 0;
+  border-radius: 8px;
   border: 1px solid #ccc;
   box-shadow: none;
   line-height: 1.5;
@@ -376,7 +409,7 @@ textarea.suppInput {
 .submitButton {
   padding: 12px 24px;
   border-radius: 8px;
-  background-color: var(--primary-color); /* Using theme color */
+  background-color: var(--primary-color);
   color: #ffffff;
   font-size: 16px;
   font-weight: bold;
@@ -392,7 +425,7 @@ textarea.suppInput {
   background-color: var(--secondary-color);
 }
 
-#formResult { /* Styling for the result message from Web3Forms */
+#formResult {
     margin-top: 15px;
     font-weight: 500;
 }
@@ -408,25 +441,22 @@ textarea.suppInput {
 }
 
 .team-content-wrapper {
-  width: 90%; /* Increased width slightly */
+  width: 90%;
   max-width: 1200px;
   margin-bottom: 30px;
 }
 
 #team.teamColumn {
   margin-bottom: 20px;
-  /* text-align: left; /* Titles will be centered by .section-title-shared if applied */
 }
-/* #team.teamColumn h1.titlesLeft is covered by .section-title-shared */
-
 
 #team.teamColumn h2.titlesLeft {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Slightly smaller */
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 400;
   color: var(--dark-pine);
   margin-bottom: 25px;
-  text-align: center; /* Center subtitle */
+  text-align: center;
 }
 
 .rolesList {
@@ -442,18 +472,18 @@ textarea.suppInput {
 .roleFilter {
   background: var(--background-light3);
   border: 1px solid var(--secondary-color);
-  padding: 10px 18px; /* Slightly larger */
+  padding: 10px 18px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.95rem; /* Slightly larger */
+  font-size: 0.95rem;
   color: var(--secondary-color);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   font-weight: 600;
-  border-radius: 25px; /* More rounded */
+  border-radius: 25px;
 }
 
 .roleFilter:hover {
-  background-color: var(--accent-color2); /* Lighter accent on hover */
+  background-color: var(--accent-color2);
   border-color: var(--accent-color);
 }
 .roleFilter.active {
@@ -465,11 +495,10 @@ textarea.suppInput {
 .memberContainer {
   display: flex;
   justify-content: center;
-  width: 100%; /* Use full width of parent (.rolesCenter) */
-  max-width: 1400px; /* Overall constraint */
+  width: 100%;
+  max-width: 1400px;
   flex-wrap: wrap;
-  gap: 25px; /* Increased gap */
-  /* padding: 15px; Removed, gap handles spacing */
+  gap: 25px;
 }
 
 .pictureCard {
@@ -478,14 +507,13 @@ textarea.suppInput {
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  border: 1px solid #eee; /* Subtle border */
+  border: 1px solid #eee;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: calc(20% - 20px); /* 5 cards: 25px gap * 4 = 100px. (100px / 5 = 20px) */
+  flex-basis: calc(20% - 20px);
   width: calc(20% - 20px);
   min-width: 180px;
 }
@@ -497,7 +525,7 @@ textarea.suppInput {
 }
 
 div.pictureCard > h4, div.pictureCard > h5 {
-  margin: 12px 8px 8px 8px; /* Adjusted margins */
+  margin: 12px 8px 8px 8px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
@@ -506,7 +534,7 @@ div.pictureCard > h4 {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--dark-pine);
-  margin-bottom: 5px; /* Space between name and title */
+  margin-bottom: 5px;
 }
 
 div.pictureCard > h5 {
@@ -517,7 +545,7 @@ div.pictureCard > h5 {
 
 .icons {
   width: 28px;
-  margin: 8px 5px 12px 5px; /* Adjusted margin */
+  margin: 8px 5px 12px 5px;
   transition: transform 0.2s ease;
 }
 
@@ -527,25 +555,25 @@ div.pictureCard > h5 {
 
 .pictureCard:hover {
   box-shadow: 6px 6px 0px var(--primary-color);
-  transform: translate(-4px, -4px); /* More pronounced */
+  transform: translate(-4px, -4px);
 }
 
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .pictureCard {
-        flex-basis: calc(25% - 18.75px); /* 4 cards: 25px gap * 3 = 75px. (75px / 4) */
+        flex-basis: calc(25% - 18.75px);
         width: calc(25% - 18.75px);
     }
 }
 
 @media (max-width: 992px) {
     .pictureCard {
-        flex-basis: calc(33.333% - 16.66px); /* 3 cards: 25px gap * 2 = 50px. (50px / 3) */
+        flex-basis: calc(33.333% - 16.66px);
         width: calc(33.333% - 16.66px);
     }
     #teampic {
-        max-width: 90%; /* Allow image to be nearly full width before stacking */
+        max-width: 90%;
     }
     .missionContent {
         flex-direction: column;
@@ -553,33 +581,70 @@ div.pictureCard > h5 {
     }
     .missionText {
         text-align: center;
-        max-width: 700px; /* Max width for centered text */
+        max-width: 700px;
     }
     .missionText > h1.section-title-shared {
-        text-align: center; /* Ensure mission title is also centered when stacked */
+        text-align: center;
     }
 }
 
 
-@media (max-width: 768px) { /* Tablet and smaller */
+@media (max-width: 768px) { /* Tablet and smaller - Hamburger Menu Active */
   .navBar {
     width: 95%;
-    flex-direction: column;
     padding: 15px;
-    gap: 5px;
+    /* flex-direction: column; No longer needed here, handled by nav-links */
+    /* gap: 5px; No longer needed here */
   }
-  .navBar li {
-    margin: 8px 0; /* Increased margin for stacked items */
-  }
-  .navTitle {
-      padding: 10px 20px; /* Larger clickable area */
-  }
-  .terminal {
-    margin-right: 0;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    justify-content: center;
+
+  .nav-links {
+    display: none; /* Hide links by default on small screens */
+    flex-direction: column;
     width: 100%;
+    background-color: var(--secondary-color); /* Or a different color for dropdown */
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    left: 0;
+    padding: 0;
+    margin-top: 5px; /* Optional: space between navbar and dropdown */
+    border-bottom-left-radius: 15px; /* Optional: match navbar rounding */
+    border-bottom-right-radius: 15px; /* Optional: match navbar rounding */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: add shadow to dropdown */
+    z-index: 999; /* Ensure it's above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when hamburger is clicked */
+  }
+
+  .nav-links li {
+    margin: 0; /* Remove horizontal margin */
+    width: 100%; /* Make li full width */
+    text-align: center; /* Center text in li */
+  }
+
+  .navTitle {
+    padding: 15px 20px; /* Larger clickable area for mobile */
+    display: block; /* Make anchor fill li */
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+  }
+   .nav-links li:last-child .navTitle {
+    border-bottom: none; /* Remove border from last item */
+  }
+
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger icon */
+  }
+
+  .terminal {
+    /* Adjust if needed, but space-between on .navBar might handle it */
+    /* margin-right: 0; */
+    /* margin-bottom: 10px; Removed as it's inline now */
+    font-size: 1.2rem;
+    /* justify-content: center; */
+    /* width: 100%; */
   }
 
   .team-content-wrapper, .memberContainer {
@@ -591,26 +656,25 @@ div.pictureCard > h5 {
   }
 
   .pictureCard {
-    flex-basis: calc(50% - 12.5px); /* 2 cards: 25px gap * 1 = 25px. (25px / 2) */
+    flex-basis: calc(50% - 12.5px);
     width: calc(50% - 12.5px);
   }
 
-  /* Responsive for Contact/Support Section */
   .centerSupp {
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Keep or adjust gap */
+    gap: 30px;
   }
 
   .suppText {
     width: 100%;
     max-width: 550px;
     text-align: center;
-    margin: 0 0 10px 0; /* Only bottom margin when stacked */
+    margin: 0 0 10px 0;
   }
 
   .suppText p {
-    font-size: 1.05rem; /* Consistent with other p tags */
+    font-size: 1.05rem;
   }
 
   .form-container {
@@ -619,13 +683,13 @@ div.pictureCard > h5 {
   }
 
   .suppInput {
-    font-size: 16px; /* Keep font size readable */
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) { /* Mobile */
   body {
-    line-height: 1.5; /* Slightly reduce for smaller screens if text feels cramped */
+    line-height: 1.5;
   }
   #logo {
     max-width: 280px;
@@ -639,9 +703,7 @@ div.pictureCard > h5 {
     font-size: clamp(1.1rem, 5vw, 1.6rem);
   }
   .section-title-shared,
-  /* .faqSection > h1,  Already covered by .section-title-shared */
-  /* .suppContainer > h1.titlesLeft, Already covered by .section-title-shared */
-  #team.teamColumn h1.titlesLeft.section-title-shared { /* Ensure this gets the mobile size */
+  #team.teamColumn h1.titlesLeft.section-title-shared {
     font-size: clamp(1.6rem, 7vw, 2rem);
     margin-bottom: 25px;
   }
@@ -655,7 +717,7 @@ div.pictureCard > h5 {
     flex-basis: 100%;
     width: 100%;
     min-width: unset;
-    gap: 15px; /* Reduce gap within the card itself if needed */
+    /* gap: 15px; This controls gap between cards, not inside a card */
   }
   
   div.pictureCard > h4 {
@@ -666,11 +728,11 @@ div.pictureCard > h5 {
   }
 
   .roleFilter {
-    padding: 8px 12px; /* Adjusted */
-    font-size: 0.9rem; /* Adjusted */
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 
-  .missionText p, .faqItem p, .suppText p {
+  .missionText p, .faqItem p, .suppText p { /* .faqAnswer p was not specific enough */
     font-size: 0.9rem;
   }
   .faqQuestion {
@@ -681,22 +743,25 @@ div.pictureCard > h5 {
       font-size: 1.2em;
       margin-right: 10px;
   }
-  .faqAnswer {
-      padding: 0 15px 15px 40px; /* Adjust left padding for smaller icon margin */
+  .faqAnswer { /* Ensure specificity for smaller screens */
+      padding: 0 15px 15px 40px;
       font-size: 0.9rem;
   }
 
   .suppInput {
-    padding: 10px 15px; /* More balanced padding */
+    padding: 10px 15px;
   }
   .submitButton {
-    padding: 12px 20px; /* Adjusted */
+    padding: 12px 20px;
     font-size: 16px;
   }
   .navBar {
-      padding: 10px;
+      padding: 10px 15px; /* Adjusted padding for smaller screens */
   }
-  .navTitle {
-      padding: 6px 10px;
+  .nav-links { /* Ensure dropdown also looks good on very small screens */
+      /* No specific changes needed here if 768px styles are sufficient */
+  }
+  .navTitle { /* Ensure nav titles in dropdown are well-padded */
+      padding: 12px 15px;
   }
 }

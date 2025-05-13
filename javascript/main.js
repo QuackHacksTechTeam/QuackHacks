@@ -1,13 +1,29 @@
 /* Text Scramble Effect (Optional - keep if you use it elsewhere) */
 const chars = "!<>-_\\/[]{}—=+*^?#________";
+
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('.scramble').forEach(el => {
+  /* Hamburger Menu Toggle Logic */
+  const hamburger = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active'); // For styling the hamburger icon itself
+    });
+  } else {
+    if (!hamburger) console.error("Hamburger menu element not found.");
+    if (!navLinks) console.error("Nav links element not found.");
+  }
+
+  /* Text Scramble for navTitles (if used) */
+  document.querySelectorAll('.scramble').forEach(el => { // Assuming .scramble is a class you might add
     const originalText = el.dataset.text || el.textContent;
-    let intervalId = null; // To store interval ID for clearing
+    let intervalId = null;
 
     const scrambleEffect = () => {
       let iterations = 0;
-      if (intervalId) clearInterval(intervalId); // Clear previous interval if any
+      if (intervalId) clearInterval(intervalId);
 
       intervalId = setInterval(() => {
         const scrambled = originalText
@@ -25,14 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
           el.textContent = originalText;
         }
         iterations += 1 / 2;
-      }, 40); // Adjusted speed
+      }, 40);
     };
 
     el.addEventListener('mouseenter', scrambleEffect);
-    // Optional: Reset on mouseleave if you want the effect to stop or reset
     el.addEventListener('mouseleave', () => {
         if (intervalId) clearInterval(intervalId);
-        el.textContent = originalText; // Reset to original text
+        el.textContent = originalText;
     });
   });
 
@@ -48,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pictures.forEach(picture => {
           const pictureRoles = picture.dataset.role ? picture.dataset.role.split(" ") : [];
           if (button.textContent.trim() === 'Team' || pictureRoles.includes(button.textContent.trim())) {
-            picture.style.display = "flex"; // Use flex as it's a flex item
+            picture.style.display = "flex";
           } else {
             picture.style.display = "none";
           }
@@ -60,21 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (teamButton) {
       teamButton.click();
     } else {
-      filterButtons[0]?.click(); // Click the first filter button if 'Team' doesn't exist
+      filterButtons[0]?.click();
     }
   }
 
   /* Web3Forms Submission Logic */
-  const contactForm = document.getElementById('contactForm'); // Use new ID "contactForm"
-  const formResult = document.getElementById('formResult');   // Use new ID "formResult"
+  const contactForm = document.getElementById('contactForm');
+  const formResult = document.getElementById('formResult');
 
-  if (contactForm && formResult) { // Check if elements exist
+  if (contactForm && formResult) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(contactForm);
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
-      formResult.style.display = "block"; // Make sure result div is visible
+      formResult.style.display = "block";
       formResult.innerHTML = "Please wait...";
 
       fetch('https://api.web3forms.com/submit', {
@@ -102,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.reset();
         setTimeout(() => {
           formResult.style.display = "none";
-          formResult.innerHTML = ""; // Clear content
-        }, 4000); // Increased timeout
+          formResult.innerHTML = "";
+        }, 4000);
       });
     });
   } else {
@@ -116,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   faqQuestions.forEach(button => {
     button.addEventListener('click', () => {
-      const answerDiv = button.nextElementSibling; // Should be .faqAnswer
+      const answerDiv = button.nextElementSibling;
       const icon = button.querySelector('.faqIcon');
       const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
@@ -126,28 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (isExpanded) {
-        // Collapse
         button.setAttribute('aria-expanded', 'false');
-        // icon.textContent = '+'; // Use CSS for icon change via rotation
         answerDiv.style.maxHeight = null;
-        answerDiv.style.paddingTop = '0px';     // Match collapsed padding
-        answerDiv.style.paddingBottom = '0px';  // Match collapsed padding
-        // Optional: Add 'hidden' attribute after transition for accessibility
-        // setTimeout(() => { if (button.getAttribute('aria-expanded') === 'false') answerDiv.hidden = true; }, 400);
-
+        answerDiv.style.paddingTop = '0px';
+        answerDiv.style.paddingBottom = '0px';
       } else {
-        // Expand
         button.setAttribute('aria-expanded', 'true');
-        // icon.textContent = '-'; // Use CSS for icon change via rotation
-        
-        answerDiv.hidden = false; // Remove hidden attribute if present
-        // Set padding before calculating scrollHeight for accuracy if needed
-        // but better to set target padding and let transition handle it.
-        answerDiv.style.paddingTop = '0px'; // Will transition to this, then to final if different
-        answerDiv.style.paddingBottom = '20px'; // Final bottom padding when open
+        answerDiv.hidden = false;
+        answerDiv.style.paddingTop = '0px';
+        answerDiv.style.paddingBottom = '20px';
         answerDiv.style.maxHeight = answerDiv.scrollHeight + "px";
       }
     });
   });
 });
-// REMOVED THE STRAY '}' THAT WAS HERE
