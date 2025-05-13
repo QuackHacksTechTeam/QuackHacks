@@ -13,9 +13,9 @@
                 <span class="typed-text"></span><span class="cursor">|</span>
             </div>
             <li><a href="#mission" class="navTitle">MISSION</a></li>
-            <li><a href="#support" class="scramble navTitle" data-text="SUPPORT US">SUPPORT US</a></li>
             <li><a href="#faq" class="navTitle">FAQ</a></li>
-            <li><a href="#team" class="scramble navTitle" data-text="TEAM">TEAM</a></li>
+            <li><a href="#support" class="navTitle" data-text="SUPPORT US">SUPPORT US</a></li>
+            <li><a href="#team" class="navTitle" data-text="TEAM">TEAM</a></li>
         </nav>
     </div>
 
@@ -26,49 +26,112 @@
         <h3 class="fall">UO's First High School Hackathon</h3>
     </div>
 
-    <div id="mission"class="missionCenter">
+    <div id="mission" class="missionCenter">
         <div class="missionContent">
         <img src="../images/QHTeam.JPG" id="teampic" alt="Team Photo">
             <div class="missionText">
-                <h1>Our Mission</h1>
+                <h1 class="section-title-shared">Our Mission</h1>
                 <p>
-                    QuackHacks is the University of Oregon’s hackathon hosting team.
-                    Our student-lead events bring together innovative students for 24 hours of coding, learning, and building.
-                    Hackathons are invention marathons concluded with a science fair and award show, and are a way to bring the community together to learn new skills, build amazing projects, and share ideas!
+                <strong>
+                    QuackHacks is a fully student-run hackathon that empowers students to explore innovation through hands-on, collaborative learning. In a fast-paced and high-energy environment, participants work in teams to build creative projects, enjoy free food and merch, and gain exposure to new technologies through workshops and real-world experience.
+                </strong>
+                </p>
+                <br>
+                <p>
+                    <strong>
+                        As a registered non-profit, QuackHacks is organized by a diverse team of students from fields such as Art, Business, Marketing, and Computer Science. Our commitment to experiential learning extends beyond participants; organizers gain valuable real-world experience in areas like event planning, budgeting, sponsorship, branding, marketing, and software development. Every aspect of QuackHacks is designed to provide meaningful opportunities for students to apply their skills, grow professionally, and make an impact.
+                    </strong>
                 </p>
             </div>
         </div>
     </div>
 
     <div id="faq" class="faqSection">
-        <h1>Frequently Asked Questions</h1>
+        <h1 class="section-title-shared">Frequently Asked Questions</h1>
+
         <div class="faqItem">
-            <h3>What is QuackHacks Lite?</h3>
-            <p>QuackHacks is an all day hackathon where high school students come together to build projects and learn new skills.</p>
+            <button class="faqQuestion" aria-expanded="false">
+                <span class="faqIcon">+</span>
+                What is QuackHacks Lite?
+            </button>
+            <div class="faqAnswer" hidden>
+                <p>QuackHacks is an all day hackathon where high school students come together to build projects and learn new skills.</p>
+            </div>
         </div>
+
         <div class="faqItem">
-            <h3>When is QuackHacks Lite?</h3>
-            <p>QuackHacks Lite takes place May 31st, 9am - 6pm. Taking place in the ERB Memorial Union, in the Redwood Auditorium</p>
+            <button class="faqQuestion" aria-expanded="false">
+                <span class="faqIcon">+</span>
+                When is QuackHacks Lite?
+            </button>
+            <div class="faqAnswer" hidden>
+                <p>QuackHacks Lite takes place May 31st, 9am - 6pm. Taking place in the ERB Memorial Union, in the Redwood Auditorium.</p>
+            </div>
         </div>
+
         <div class="faqItem">
-            <h3>Who can participate?</h3>
-            <p>All High school students are welcome, regardless of experience level.</p>
+            <button class="faqQuestion" aria-expanded="false">
+                <span class="faqIcon">+</span>
+                Who can participate?
+            </button>
+            <div class="faqAnswer" hidden>
+                <p>All High school students are welcome, regardless of experience level.</p>
+            </div>
         </div>
+
         <div class="faqItem">
-            <h3>Does it cost anything?</h3>
-            <p>Nope! QuackHacks is completely free to attend.</p>
+            <button class="faqQuestion" aria-expanded="false">
+                <span class="faqIcon">+</span>
+                Does it cost anything?
+            </button>
+            <div class="faqAnswer" hidden>
+                <p>Nope! QuackHacks is completely free to attend.</p>
+            </div>
         </div>
-         </div>
+
+        <div class="faqItem">
+            <button class="faqQuestion" aria-expanded="false">
+                <span class="faqIcon">+</span>
+                Can I start on my project before the hackathon?
+            </button>
+            <div class="faqAnswer" hidden>
+                <p>You cannot work on a project you started before the hackathon. Ideation before the hackathon is allowed, but all implementation must occur during the hackathon.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="suppContainer" id="support">
+        <h1 class="titlesLeft section-title-shared">Got Questions?</h1>
+        <div class="centerSupp">
+            <div class="suppText">
+                <p>
+                    We're here to help. Please check out our FAQ first, and if you still have questions, fill out this form. We'll get back to you as soon as we can!
+                </p>
+            </div>
+            <div class="form-container">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">  <input type="hidden" name="access_key" value="ba884628-ea48-4fb5-944f-f85992cd0079">
+                    <input type="text" name="name" required class="suppInput" placeholder="Name">
+                    <br>
+                    <input type="email" name="email" required class="suppInput" placeholder="Email">
+                    <br>
+                    <textarea name="message" required class="suppInput" placeholder="Your Message" rows="5"></textarea>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <input type="hidden" name="redirect" value="http://127.0.0.1:5500/pages/index.html#support">
+                    <br>
+                    <button type="submit" class="submitButton">Send Message</button>
+                </form>
+                <div id="formResult"></div> </div>
+        </div>
+    </div>
 
     <div class="rolesCenter">
         <div class="team-content-wrapper">
             <div id="team" class="teamColumn">
-                <h1 class="titlesLeft">Meet Our Team</h1>
-                <h2 class="titlesLeft">Here's the team who makes it all happen.</h2>
+                <h1 class="titlesLeft section-title-shared">Meet Our Team</h1> <h2 class="titlesLeft">Here's the team who makes it all happen.</h2>
             </div>
             <ul class="rolesList">
                 <li class="roles"><button class="roleFilter">Team</button></li>
-                <li class="roles"><button class="roleFilter">Directors</button></li>
+                <li class="roles"><button class="roleFilter">Executives</button></li>
                 <li class="roles"><button class="roleFilter">Design</button></li>
                 <li class="roles"><button class="roleFilter">Finance</button></li>
                 <li class="roles"><button class="roleFilter">Marketing</button></li>
@@ -78,7 +141,7 @@
             </ul>
         </div>
         <div class="memberContainer" >
-            <div class="pictureCard" data-role="Directors">
+            <div class="pictureCard" data-role="Executives">
                 <img src="../images/noah_weis.JPG" class="memberPictures" style="transform: translateY(-10px) scale(1.1);" alt="Noah Weis">
                 <h4>Noah Weis</h4>
                 <h5>Director & Founder</h5>
@@ -87,25 +150,25 @@
                     <a href="https://github.com/noah-weis" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
                 </div>
             </div>
-            <div class="pictureCard" data-role="Directors Operations">
+            <div class="pictureCard" data-role="Executives Operations">
                 <img src="../images/AdamTestPic.jpg" class="memberPictures" alt="Adam Wolfe">
                 <h4>Adam Wolfe</h4>
                 <h5>Director of Internal Operations, Founder</h5>
                 <a href="https://www.linkedin.com/in/adamdwolfe/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
-            <div class="pictureCard" data-role="Directors Marketing Design">
+            <div class="pictureCard" data-role="Executives Marketing Design">
                 <img src="../images/jaya.JPG" class="memberPictures" alt="Jaya Munoz">
                 <h4>Jaya Munoz</h4>
                 <h5>Director of Marketing & Design, Co-Founder</h5>
                 <a href="https://www.linkedin.com/in/jayamunoz/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
-            <div class="pictureCard" data-role="Directors Finance Sponsorship">
+            <div class="pictureCard" data-role="Executives Finance Sponsorship">
                 <img src="../images/jack_k.JPG" class="memberPictures" alt="Jack Klein">
                 <h4>Jack Klein</h4>
                 <h5>Director of Finance & Sponsorship, Co-Founder</h5>
                 <a href="https://www.linkedin.com/in/jackmklein/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
-            <div class="pictureCard" data-role="Directors Operations Tech">
+            <div class="pictureCard" data-role="Executives Operations Tech">
                 <img src="../images/john_h.JPG" class="memberPictures" alt="John Heibel">
                 <h4>John Heibel</h4>
                 <h5>Director of Operations & Tech, Founder</h5>
@@ -195,7 +258,16 @@
                 <img src="../images/miro.JPG" class="memberPictures" alt="Miro Garcia">
                 <h4>Miro Garcia</h4>
                 <h5>Software Engineer & Artist</h5>
+                <div>
                 <a href="https://www.linkedin.com/in/mirogarcia/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                <a href="https://github.com/miropg" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+                </div>
+            </div>
+            <div class="pictureCard" data-role="Operations">
+                <img src="../images/Greg.JPG" class="memberPictures" alt="Gregory Morrison">
+                <h4>Gregory Morrison</h4>
+                <h5>Operations</h5>
+                <a href="https://www.linkedin.com/in/gregmorrison12/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
             <div class="pictureCard" data-role="Operations">
                 <img src="../images/the-boys.png" class="memberPictures" alt="Luis Hernandez">
@@ -204,22 +276,10 @@
                 <a href="https://www.linkedin.com/in/luis-daniel-hernandez-moreno/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
             <div class="pictureCard" data-role="Operations">
-                <img src="../images/Zef.JPG" class="memberPictures" alt="Zeferino Araiza">
-                <h4>Zeferino Araiza</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/zeferino-araiza-505901323/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
                 <img src="../images/Noah M.JPG" class="memberPictures" alt="Noah Menachemson">
                 <h4>Noah Menachemson</h4>
                 <h5>Operations</h5>
                 <a href="https://www.linkedin.com/in/noah-menachemson-6724a82ba/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <img src="../images/Greg.JPG" class="memberPictures" alt="Gregory Morrison">
-                <h4>Gregory Morrison</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/gregmorrison12/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
             <div class="pictureCard" data-role="Operations">
                 <img src="../images/trevor.JPG" class="memberPictures" alt="Trevor Robbins">
@@ -232,6 +292,12 @@
                 <h4>Tara Disser</h4>
                 <h5>Operations & Marketing</h5>
                 <a href="https://www.linkedin.com/in/taradisser/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+            </div>
+            <div class="pictureCard" data-role="Operations">
+                <img src="../images/Zef.JPG" class="memberPictures" alt="Zeferino Araiza">
+                <h4>Zeferino Araiza</h4>
+                <h5>Operations</h5>
+                <a href="https://www.linkedin.com/in/zeferino-araiza-505901323/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
             <div class="pictureCard" data-role="Marketing">
                 <img src="../images/Ashna.JPG" class="memberPictures" alt="Ashna Rajbhandari">

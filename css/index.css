@@ -15,11 +15,11 @@
   --dark-pine: #02130b;
   --third-color: rgb(198, 216, 154);
   --test-lightgreen: #FFFFE0; /* Light yellow, almost white */
-  --accent-color: #84c2e2;
+  --accent-color: #84c2e2; /* Used for input focus & active filter */
   --accent-color2: #d3efe8;
   --background-light: #FEFED3;
   --background-light2: rgb(247, 241, 217);
-  --background-light3: #FCFBE3;
+  --background-light3: #FCFBE3; /* Used for cards and role filters */
   --terminal-green: #00FF00;
   --background-black: #000000;
   --team-section-bg: #111054;
@@ -32,50 +32,60 @@ body {
   background: linear-gradient(
     rgba(233, 255, 206, 0.6),
     rgba(233, 255, 206, 0.6)
-  ), url('../images/home.JPG'); /* Adjust path if your images folder is elsewhere */
+  ), url('../images/home.JPG');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100%;
   min-height: 100vh;
-  color: #333;
+  color: var(--dark-pine); /* Consistent default text color */
+  line-height: 1.6;
 }
 
-.navCenter{
+/* Navigation Styles */
+.navCenter {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Uncomment these lines if you want a sticky navigation bar */
+  width: 100%;
   /* position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; */
-  /* background-color: rgba(28, 53, 17, 0.9); /* Optional: background for sticky nav */
+  background-color: rgba(28, 53, 17, 0.95); /* Example sticky background */
 }
 
 .navBar {
   margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   list-style-type: none;
   background-color: var(--secondary-color);
-  width: 80%;
-  max-width: 1200px;
+  width: 90%; /* Increased width for better spacing on medium screens */
+  max-width: 1100px; /* Adjusted max-width */
   padding: 10px 15px;
   border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.navTitle{
-    color: var(--third-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    font-family: 'Montserrat', sans-serif;
+.navBar li { /* Target li for spacing if needed */
+    margin: 0 5px;
+}
+
+.navTitle {
+  color: var(--third-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-radius: 5px; /* Slight rounding for hover feedback area */
 }
 
 .navTitle:hover {
-    color: var(--accent-color)
+  color: var(--accent-color);
+  background-color: rgba(255,255,255,0.1); /* Subtle hover background */
 }
 
 .terminal {
@@ -83,7 +93,8 @@ body {
   color: var(--third-color);
   display: flex;
   align-items: center;
-  margin-right: auto; /* Pushes other nav items to the right */
+  margin-right: auto;
+  padding-left: 10px; /* Give some space from edge */
 }
 
 .cursor {
@@ -95,59 +106,88 @@ body {
   50% { opacity: 0; }
 }
 
-.typed-text {
-  display: inline-block;
-  font-style: italic;
-  overflow: hidden; /* Keep if you want the typing effect to reveal */
-}
-
 .typed-text::after {
   content: ">>> quackhacks";
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  animation: typing 0.7s steps(14) forwards; /* Adjust steps based on actual text length */
+  animation: typing 0.7s steps(14) forwards;
   font-style: italic;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 14ch } /* Adjust based on actual text length if dynamic */
+  from { width: 0; }
+  to { width: 14ch; }
 }
 
-.scramble {
-  display: inline-block;
-  position: relative; /* For text scramble effect if used */
-}
-
-.home{
+/* Home Section Styles */
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 45px 20px;
-  margin-top: 30px;
+  padding: 45px 20px 60px 20px; /* Added more bottom padding */
+  margin-top: 20px;
   text-align: center;
 }
 
-#logo{
+#logo {
   height: auto;
   width: 100%;
-  max-width: 600px; /* Adjust as needed, was 600px */
-  margin: -100px; /*This can cause layout issues, use padding on parent or regular margins */
-  margin-bottom:-20px; /* Example */
+  max-width: 450px;
+  margin-top: -80px;
+  margin-bottom: 25px;
 }
 
+.homeText, .fall {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 0 rgba(28, 53, 17, 0.8), -1px -1px 0 rgba(198, 216, 154, 0.7);
+}
+
+.homeText {
+  font-size: clamp(2.5rem, 7vw, 3.5rem);
+}
+
+.fall {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  color: var(--dark-pine);
+  font-weight: 500;
+  text-shadow: 1px 1px 0 rgba(198, 216, 154, 0.5);
+  margin-top: 10px; /* Space below "QuackHacks Lite:" */
+}
+
+/* Shared Section Title Styles */
+.section-title-shared {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3rem); /* Adjusted clamp slightly */
+  color: var(--primary-color);
+  margin-bottom: 40px; /* Consistent bottom margin for titles */
+  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
+  text-align: center;
+}
+
+/* Mission Section Styles */
 .missionCenter {
   display: flex;
-  justify-content: center;
-  padding: 40px 20px;
+  flex-direction: column; /* Stack title above content */
+  align-items: center;
+  padding: 60px 20px;
   width: 100%;
+}
+
+/* For the H1 "Our Mission" IF it's directly in .missionCenter and NOT .section-title-shared */
+.missionCenter > h1:not(.section-title-shared) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    color: var(--spruce-green);
+    margin-bottom: 30px;
 }
 
 .missionContent {
   display: flex;
-  align-items: center;
+  align-items: center; /* Vertically align image and text */
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
@@ -156,283 +196,507 @@ body {
 }
 
 #teampic {
+  flex-shrink: 0; /* Prevent image from shrinking too much */
   height: auto;
-  width: 45%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 450px;
   border-radius: 12px;
-  background-color: white;  /* Optional: adds contrast behind transparent images */
-  padding: 5px; /* Space between image and border */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  min-width: 280px;
 }
 
 .missionText {
   flex: 1;
   text-align: left;
   font-family: 'Open Sans', sans-serif;
-  min-width: 250px;
+  min-width: 280px;
+  max-width: 600px;
 }
 
-.missionText h1 {
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  color: var(--primary-color) !important; /* Ensure this color is applied */
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
+/* This H1 is inside .missionText so it's distinct */
+.missionText > h1.section-title-shared {
+    text-align: left; /* Override if needed */
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 2.6rem); /* Slightly smaller than main section titles */
 }
+
 
 .missionText p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--dark-pine);
+  margin-bottom: 1rem;
+}
+.missionText p:last-child {
+  margin-bottom: 0;
 }
 
-.homeText, .fall {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; /* Consider using your Google Fonts */
-  font-size: clamp(3.2rem, 7vw, 4rem); /* Responsive font size */
-  font-weight: bold;
-  color: var(--primary-color);
-  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1), -2px -2px 0 rgba(198, 216, 154, 1);
+
+/* FAQ Section Styles */
+.faqSection {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto; /* Center the section */
+  text-align:center; /* Ensures h1 is centered if not overridden */
+}
+/* .faqSection > h1 is now handled by .section-title-shared */
+
+.faqItem {
+  background-color: #ffffff; /* White background like the image */
+  border: 1px solid #e0e0e0;   /* Lighter border for items */
+  border-radius: 10px;       /* More rounded corners */
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+  overflow: hidden; /* For max-height transition */
 }
 
-.fall{
-    font-size: clamp(1.1rem, 3.4vw, 2.0rem);
-    color: var(--dark-pine);
-    text-shadow: 0px 0px 0 rgba(132, 194, 226, 0.0);
-    font-size: clamp(1.8rem, 5.8vw, 2.8rem);
-}
-/*132, 194, 226*/
-/*28, 53, 17*/
-/*198, 216, 154*/
-
-.missionCenter{
+.faqQuestion {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  /* height: 100%; -- Be careful with fixed percentage heights */
-  padding: 40px 20px;
-  text-align: center;
-}
-.missionCenter h1{
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.2rem, 6vw, 3.2rem);
-    color: var(--spruce-green); /* Example color */
-    /* This will apply if there's an H1 as a direct child of .missionCenter, separate from .missionText H1 */
+  background-color: transparent;
+  border: none;
+  padding: 18px 20px; /* Increased padding */
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--dark-pine);
+  font-size: 1.15rem; /* Slightly larger question font */
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease;
 }
 
-.rolesCenter{
+.faqQuestion:hover {
+  background-color: #f7f7f7; /* Subtle hover for the whole bar */
+}
+
+.faqIcon {
+  margin-right: 15px;
+  font-size: 1.3em; /* Adjusted */
+  font-weight: bold;
+  color: var(--primary-color);
+  transition: transform 0.3s ease-out;
+  display: inline-block; /* For transform to work correctly */
+}
+
+.faqQuestion[aria-expanded="true"] .faqIcon {
+  transform: rotate(45deg); /* Makes '+' look like 'x' */
+}
+
+.faqAnswer {
+  /* Padding set by JS during animation for smoother effect */
+  padding: 0px 20px 0px 55px; /* Left padding = icon margin + icon width approx + some space */
+  font-size: 1rem;
+  color: var(--dark-pine);
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out, padding-top 0.35s ease-in-out, padding-bottom 0.35s ease-in-out;
+}
+
+.faqAnswer p {
+    margin: 0; /* Remove default p margin if it's direct child */
+    padding-bottom: 0px; /* Add padding when content is shown via JS */
+}
+
+
+/* Support/Contact Section Styles */
+.suppContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap; /* This might not be needed if stacking column */
-  margin-top: 50px;
-  padding: 20px 0;
+  padding: 60px 20px;
+  text-align: center;
+  width: 100%;
+}
+/* .suppContainer > h1.titlesLeft is now covered by .section-title-shared */
+
+.centerSupp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Increased gap */
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+.suppText {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.suppText p {
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.7;
+  color: var(--dark-pine);
+  margin-bottom: 0;
+}
+
+.form-container {
+  flex: 1.2;
+  min-width: 280px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.suppInput {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0; /* Increased vertical margin */
+  border-radius: 8px; /* Consistent rounding */
+  border: 1px solid #ccc;
+  box-shadow: none;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.suppInput:focus {
+  border-color: var(--accent-color);
+  border-width: 1px;
+  box-shadow: 0 0 0 3px rgba(132, 194, 226, 0.25);
+}
+
+textarea.suppInput {
+  resize: none;
+  min-height: 120px;
+}
+
+.submitButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: var(--primary-color); /* Using theme color */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--secondary-color);
+}
+
+#formResult { /* Styling for the result message from Web3Forms */
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+
+/* Team Section Styles */
+.rolesCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 60px 0;
   width: 100%;
 }
 
 .team-content-wrapper {
-  width: 85%;
+  width: 90%; /* Increased width slightly */
   max-width: 1200px;
   margin-bottom: 30px;
 }
 
 #team.teamColumn {
   margin-bottom: 20px;
+  /* text-align: left; /* Titles will be centered by .section-title-shared if applied */
+}
+/* #team.teamColumn h1.titlesLeft is covered by .section-title-shared */
+
+
+#team.teamColumn h2.titlesLeft {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem); /* Slightly smaller */
+  font-weight: 400;
+  color: var(--dark-pine);
+  margin-bottom: 25px;
+  text-align: center; /* Center subtitle */
 }
 
-#team.teamColumn .titlesLeft {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--dark-pine);
-}
-
-#team.teamColumn h1.titlesLeft{
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 0.5em;
-    color: var(--primary-color) !important;
-    text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
-}
-#team.teamColumn h2.titlesLeft{
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 400; /* Lighter than h1 */
-}
-
-.rolesList{
+.rolesList {
   display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align items to the start */
-  padding: 0; /* Remove default ul padding */
-  gap: 10px; /* Adds space between role filter buttons */
-}
-
-/* .roles class was previously empty, can be removed if not styled */
-
-.memberContainer{
-  display: flex;
-  justify-content: center; /* Center cards if they don't fill the row */
-  width: 90%;
-  max-width: 1400px; /* Crucial for the 5x5 calculation */
-  flex-wrap: wrap;
-  margin-top: 20px; /* Space above if needed */
-  gap: 20px; /* Space between picture cards */
-  background-color: transparent;
-  padding: 15px; /* Optional padding inside the container */
-  border-radius: 10px; /* Optional */
-}
-
-.pictureCard{
-  background-color: var(--background-light3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, border-color 0.3s ease, border-width 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-
-  /* --- CSS FOR 5x5 LAYOUT (Desktop/Large Screens) --- */
-  flex-grow: 0;
-  flex-shrink: 0;
-  /* For 5 items with a 20px gap: calc(20% - (4 * 20px_gap / 5_items)) = calc(20% - 16px) */
-  flex-basis: calc(20% - 16px);
-  width: calc(20% - 16px); /* Fallback or reinforcement for flex-basis */
-  min-width: 140px; /* Your existing min-width */
-  /* --- END OF CSS FOR 5x5 LAYOUT --- */
-}
-
-.memberPictures{
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-div.pictureCard > h4, div.pictureCard > h5{
-  margin: 10px 5px;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-div.pictureCard > h4{
-    font-size: 1.1rem;
-    font-weight: 700;
-}
-div.pictureCard > h5{
-    font-size: 0.9rem;
-    color: #555;
-}
-
-.icons{
-  width: 30px;
-  margin: 0 5px 10px 5px;
-  transition: transform 0.2s ease;
-}
-.icons:hover{
-    transform: scale(1.1);
-}
-
-.pictureCard:hover{
-  box-shadow: 6px 6px 0 rgba(39, 109, 39, 1);
-  transform: translate(-2px, -2px);
+  justify-content: center;
+  padding: 0;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
 .roleFilter {
   background: var(--background-light3);
   border: 1px solid var(--secondary-color);
-  padding: 8px 15px;
+  padding: 10px 18px; /* Slightly larger */
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem; /* Slightly larger */
   color: var(--secondary-color);
   cursor: pointer;
-  position: relative;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   font-weight: 600;
-  border-radius: 20px;
+  border-radius: 25px; /* More rounded */
 }
-.roleFilter:hover, .roleFilter.active { /* JavaScript will toggle .active class */
+
+.roleFilter:hover {
+  background-color: var(--accent-color2); /* Lighter accent on hover */
+  border-color: var(--accent-color);
+}
+.roleFilter.active {
   background-color: var(--accent-color);
-  color: var(--secondary-color); /* Text color on active button */
+  color: white;
+  border-color: var(--accent-color);
 }
 
-.faqSection {
-  padding: 60px 20px;
-  text-align:center;
-  max-width: 1000px;
-  margin: 0 auto; /* Center the section */
+.memberContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Use full width of parent (.rolesCenter) */
+  max-width: 1400px; /* Overall constraint */
+  flex-wrap: wrap;
+  gap: 25px; /* Increased gap */
+  /* padding: 15px; Removed, gap handles spacing */
 }
 
-.faqSection h1 {
+.pictureCard {
+  background-color: var(--background-light3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  border: 1px solid #eee; /* Subtle border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(20% - 20px); /* 5 cards: 25px gap * 4 = 100px. (100px / 5 = 20px) */
+  width: calc(20% - 20px);
+  min-width: 180px;
+}
+
+.memberPictures {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+div.pictureCard > h4, div.pictureCard > h5 {
+  margin: 12px 8px 8px 8px; /* Adjusted margins */
+  text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--primary-color);
-  margin-bottom: 30px;
-  text-shadow: 2px 2px 0 rgba(28, 53, 17, 1);
 }
 
-.faqItem {
-  margin-bottom: 25px;
-  text-align: left; /* Align Q&A text to the left for readability */
-}
-
-.faqItem h3 {
-  font-family: 'Montserrat', sans-serif;
+div.pictureCard > h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--dark-pine);
-  margin-bottom: 5px;
+  margin-bottom: 5px; /* Space between name and title */
 }
 
-.faqItem p {
-  font-size: 1rem;
-  color: var(--dark-pine);
-  line-height: 1.6;
+div.pictureCard > h5 {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0;
 }
+
+.icons {
+  width: 28px;
+  margin: 8px 5px 12px 5px; /* Adjusted margin */
+  transition: transform 0.2s ease;
+}
+
+.icons:hover {
+  transform: scale(1.15);
+}
+
+.pictureCard:hover {
+  box-shadow: 6px 6px 0px var(--primary-color);
+  transform: translate(-4px, -4px); /* More pronounced */
+}
+
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+    .pictureCard {
+        flex-basis: calc(25% - 18.75px); /* 4 cards: 25px gap * 3 = 75px. (75px / 4) */
+        width: calc(25% - 18.75px);
+    }
+}
+
+@media (max-width: 992px) {
+    .pictureCard {
+        flex-basis: calc(33.333% - 16.66px); /* 3 cards: 25px gap * 2 = 50px. (50px / 3) */
+        width: calc(33.333% - 16.66px);
+    }
+    #teampic {
+        max-width: 90%; /* Allow image to be nearly full width before stacking */
+    }
+    .missionContent {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .missionText {
+        text-align: center;
+        max-width: 700px; /* Max width for centered text */
+    }
+    .missionText > h1.section-title-shared {
+        text-align: center; /* Ensure mission title is also centered when stacked */
+    }
+}
+
+
 @media (max-width: 768px) { /* Tablet and smaller */
   .navBar {
     width: 95%;
     flex-direction: column;
-    height: auto;
     padding: 15px;
+    gap: 5px;
   }
   .navBar li {
-    margin: 5px 0;
+    margin: 8px 0; /* Increased margin for stacked items */
+  }
+  .navTitle {
+      padding: 10px 20px; /* Larger clickable area */
   }
   .terminal {
     margin-right: 0;
     margin-bottom: 10px;
     font-size: 1.2rem;
+    justify-content: center;
+    width: 100%;
   }
 
-  .team-content-wrapper {
-    width: 90%;
-  }
-
-  .rolesList {
-    justify-content: center; /* Center role filters on smaller screens */
-  }
-
-  .memberContainer {
+  .team-content-wrapper, .memberContainer {
     width: 95%;
   }
 
+  .rolesList {
+    justify-content: center;
+  }
+
   .pictureCard {
-    /* 2 cards per row, considering gap. (10px is half the 20px gap) */
-    flex-basis: calc(50% - 10px);
-    width: calc(50% - 10px);
+    flex-basis: calc(50% - 12.5px); /* 2 cards: 25px gap * 1 = 25px. (25px / 2) */
+    width: calc(50% - 12.5px);
+  }
+
+  /* Responsive for Contact/Support Section */
+  .centerSupp {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Keep or adjust gap */
+  }
+
+  .suppText {
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    margin: 0 0 10px 0; /* Only bottom margin when stacked */
+  }
+
+  .suppText p {
+    font-size: 1.05rem; /* Consistent with other p tags */
+  }
+
+  .form-container {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  .suppInput {
+    font-size: 16px; /* Keep font size readable */
   }
 }
 
 @media (max-width: 480px) { /* Mobile */
-  .pictureCard {
-    /* 1 card per row. Gap is handled by container. */
-    flex-basis: calc(100% - 0px); /* Or simply 100% if container handles spacing */
-    width: calc(100% - 0px);
+  body {
+    line-height: 1.5; /* Slightly reduce for smaller screens if text feels cramped */
   }
-  #team.teamColumn h1.titlesLeft {
-    font-size: 1.8rem;
+  #logo {
+    max-width: 280px;
+    margin-top: -30px;
+    margin-bottom: 20px;
   }
+  .homeText {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  .fall {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+  }
+  .section-title-shared,
+  /* .faqSection > h1,  Already covered by .section-title-shared */
+  /* .suppContainer > h1.titlesLeft, Already covered by .section-title-shared */
+  #team.teamColumn h1.titlesLeft.section-title-shared { /* Ensure this gets the mobile size */
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    margin-bottom: 25px;
+  }
+
   #team.teamColumn h2.titlesLeft {
     font-size: 1rem;
+    line-height: 1.4;
   }
-  .roleFilter {
-    padding: 6px 10px;
+
+  .pictureCard {
+    flex-basis: 100%;
+    width: 100%;
+    min-width: unset;
+    gap: 15px; /* Reduce gap within the card itself if needed */
+  }
+  
+  div.pictureCard > h4 {
+    font-size: 1rem;
+  }
+  div.pictureCard > h5 {
     font-size: 0.8rem;
+  }
+
+  .roleFilter {
+    padding: 8px 12px; /* Adjusted */
+    font-size: 0.9rem; /* Adjusted */
+  }
+
+  .missionText p, .faqItem p, .suppText p {
+    font-size: 0.9rem;
+  }
+  .faqQuestion {
+      font-size: 1rem;
+      padding: 15px;
+  }
+  .faqIcon {
+      font-size: 1.2em;
+      margin-right: 10px;
+  }
+  .faqAnswer {
+      padding: 0 15px 15px 40px; /* Adjust left padding for smaller icon margin */
+      font-size: 0.9rem;
+  }
+
+  .suppInput {
+    padding: 10px 15px; /* More balanced padding */
+  }
+  .submitButton {
+    padding: 12px 20px; /* Adjusted */
+    font-size: 16px;
+  }
+  .navBar {
+      padding: 10px;
+  }
+  .navTitle {
+      padding: 6px 10px;
   }
 }
