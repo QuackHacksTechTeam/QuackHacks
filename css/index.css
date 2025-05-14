@@ -63,7 +63,7 @@ body {
   background-color: var(--secondary-color);
   width: 90%;
   max-width: 1100px;
-  padding: 10px 20px; /* Adjusted padding */
+  padding: 10px 150px; /* Adjusted padding */
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: relative; /* For potential absolute positioning of dropdown */
@@ -90,8 +90,18 @@ body {
   transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
   border-radius: 5px;
 }
+.navTitle2 {
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 8px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+  border-radius: 5px;
+  text-shadow: 1px 1px 0 var(--primary-color);
+}
 
-.navTitle:hover {
+.navTitle:hover, .navTitle2:hover {
   color: var(--accent-color);
   background-color: rgba(255,255,255,0.1);
 }
@@ -121,6 +131,7 @@ body {
   display: inline-block;
   animation: typing 0.7s steps(14) forwards;
   font-style: italic;
+  padding-top: 10px;
 }
 
 @keyframes typing {
@@ -662,6 +673,12 @@ div.pictureCard > h5 {
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
   }
+  .navTitle2 {
+    padding: 15px 20px; /* Larger clickable area for mobile */
+    display: block; /* Make anchor fill li */
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+  }
    .nav-links li:last-child .navTitle {
     border-bottom: none; /* Remove border from last item */
   }
@@ -795,6 +812,9 @@ div.pictureCard > h5 {
       /* No specific changes needed here if 768px styles are sufficient */
   }
   .navTitle { /* Ensure nav titles in dropdown are well-padded */
+      padding: 12px 15px;
+  }
+  .navTitle2 { /* Ensure nav titles in dropdown are well-padded */
       padding: 12px 15px;
   }
 }
