@@ -27,6 +27,10 @@
   --picture-card-bg: #E6E6FA; /* Lavender */
 }
 
+html {
+  height: 100%; /* Ensure html takes full height for sticky footer */
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(
@@ -37,10 +41,20 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 100vh;
   color: var(--dark-pine); /* Consistent default text color */
   line-height: 1.6;
+
+  /* Flexbox for Sticky Footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make body at least full viewport height */
 }
+
+/* Main Content Wrapper for Sticky Footer */
+.content-wrapper {
+  flex-grow: 1; /* Allows this div to grow and push the footer down */
+}
+
 
 /* Navigation Styles */
 .navCenter {
@@ -48,28 +62,28 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(28, 53, 17, 0.95); /* Example sticky background */
+  /* position: sticky; /* If you make it sticky, adjust .home padding-top or margin-top */
+  /* top: 0; */
+  /* z-index: 1000; */
+  /* background-color: rgba(28, 53, 17, 0.95); */
 }
 
 .navBar {
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
-  justify-content: space-between; /* Changed from space-evenly */
+  justify-content: space-between;
   align-items: center;
   background-color: var(--secondary-color);
   width: 90%;
   max-width: 1100px;
-  padding: 10px 150px; /* Adjusted padding */
+  padding: 10px 20px; /* Adjusted padding */
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  position: relative; /* For potential absolute positioning of dropdown */
+  position: relative;
 }
 
-.nav-links { /* Style for the new ul wrapper */
+.nav-links {
     display: flex;
     list-style-type: none;
     align-items: center;
@@ -87,22 +101,22 @@ body {
   padding: 8px 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+  transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 5px;
 }
-.navTitle2 {
+.navTitle2 { /* Keep your specific style for REGISTER */
   color: var(--accent-color);
   text-decoration: none;
   padding: 8px 12px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+  transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 5px;
   text-shadow: 1px 1px 0 var(--primary-color);
 }
 
 .navTitle:hover, .navTitle2:hover {
-  color: var(--accent-color);
+  color: var(--accent-color); /* Consistent hover for both */
   background-color: rgba(255,255,255,0.1);
 }
 
@@ -111,8 +125,7 @@ body {
   color: var(--third-color);
   display: flex;
   align-items: center;
-  /* margin-right: auto; Removed to allow space-between to work effectively */
-  padding-left: 10px;
+  padding-left: 10px; /* Adjusted if .navBar padding is 20px now */
 }
 
 .cursor {
@@ -131,7 +144,7 @@ body {
   display: inline-block;
   animation: typing 0.7s steps(14) forwards;
   font-style: italic;
-  padding-top: 10px;
+  /* padding-top: 10px; /* This might cause slight misalignment with cursor, remove if not needed */
 }
 
 @keyframes typing {
@@ -141,7 +154,7 @@ body {
 
 /* Hamburger Menu Styles */
 .hamburger-menu {
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
@@ -175,11 +188,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 45px 20px 60px 20px; /* You might adjust top/bottom padding if needed with 100vh */
-  /* margin-top: 20px; */ /* Consider removing or adjusting this if you want it flush to the top */
+  padding: 45px 20px 60px 20px;
   text-align: center;
-  min-height: 100vh; /* This is the key addition */
-  width: 100%; /* Ensure it spans the full width */
+  min-height: 100vh; /* Makes the home section fill the viewport initially */
+  width: 100%;
+  /* margin-top: 20px; /* Removed this as navCenter is part of normal flow */
 }
 
 
@@ -187,7 +200,7 @@ body {
   height: auto;
   width: 100%;
   max-width: 450px;
-  margin-top: -80px;
+  margin-top: -80px; /* This might need adjustment if nav is not sticky and .home has no margin-top */
   margin-bottom: 25px;
 }
 
@@ -337,7 +350,7 @@ body {
 }
 
 .faqAnswer {
-  padding: 0px 20px 0px 55px;
+  padding: 0px 20px 0px 55px; /* Initial padding for collapsed state */
   font-size: 1rem;
   color: var(--dark-pine);
   line-height: 1.6;
@@ -345,10 +358,16 @@ body {
   overflow: hidden;
   transition: max-height 0.35s ease-in-out, padding-top 0.35s ease-in-out, padding-bottom 0.35s ease-in-out;
 }
+/* Add this for when it's expanded */
+.faqQuestion[aria-expanded="true"] + .faqAnswer {
+    padding-top: 10px; /* Or your desired top padding */
+    padding-bottom: 20px; /* Or your desired bottom padding */
+}
+
 
 .faqAnswer p {
     margin: 0;
-    padding-bottom: 0px;
+    /* padding-bottom: 0px; /* Handled by parent padding */
 }
 
 
@@ -450,7 +469,7 @@ textarea.suppInput {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0 60px 0;
+  padding: 40px 0 60px 0; /* Adjust top padding if needed */
   width: 100%;
 }
 
@@ -460,7 +479,7 @@ textarea.suppInput {
   margin-bottom: 30px;
 }
 
-#team.teamColumn {
+#team.teamColumn { /* Ensure this ID is on the correct div in HTML if used */
   margin-bottom: 20px;
 }
 
@@ -520,16 +539,15 @@ textarea.suppInput {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*border-radius: 15px;*/
   border: 1px solid #eee;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.08);
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: calc(20% - 20px);
-  width: calc(20% - 20px);
-  min-width: 180px;
+  flex-basis: calc(20% - 20px); /* 5 cards per row, accounting for gap */
+  width: calc(20% - 20px); /* Fallback width */
+  min-width: 180px; /* Minimum card width */
 }
 
 .memberPictures {
@@ -540,24 +558,22 @@ textarea.suppInput {
 
 .quoteOverlay {
   position: absolute;
-  bottom: 0px;
+  bottom: 0px; /* Align to bottom of imageWrapper */
+  left: 0; /* Align to left of imageWrapper */
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  height: 100%; /* Make it cover the entire imageWrapper */
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
   font-size: 0.85rem;
   font-family: 'Open Sans', sans-serif;
-  padding: 100px 10px;
+  padding: 10px; /* Reduced padding */
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.3s ease;
-  align-items: center;     /* vertical centering */
+  display: flex; /* Added for centering quote text */
+  align-items: center;
   justify-content: center;
-}
-
-.pictureCard .quoteOverlay {
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .pictureCard:hover .quoteOverlay {
@@ -567,7 +583,7 @@ textarea.suppInput {
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 200px; /* Matches image height */
+  height: 200px;
   overflow: hidden;
 }
 
@@ -605,22 +621,65 @@ div.pictureCard > h5 {
   transform: translate(-4px, -4px);
 }
 
+/* Footer Styles */
+.footer {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-around; /* Distributes space between and around items */
+  align-items: center;
+  padding: 20px 50px; /* Top/bottom padding, left/right padding */
+  width: 100%;
+  color: var(--third-color);
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.footer > div { /* Targets direct children of footer for alignment */
+    /* If you want them side-by-side and taking space */
+    /* flex: 1; */
+    /* text-align: center; */ /* if you want text in each div centered */
+}
+
+.footer p {
+  color: var(--third-color);
+  margin: 5px 0; /* Add a little vertical spacing for paragraphs */
+}
+
+.contactsFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items within this column */
+}
+
+.contactsLogo {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Space above the logos */
+}
+
+.contactsLogo .icons { /* Ensure consistent icon styling */
+  width: 24px; /* Adjust size if needed */
+  height: 24px; /* Adjust size if needed */
+  margin: 0 8px; /* Space between icons */
+}
+
 
 /* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /* Adjusted breakpoint for 4 cards */
     .pictureCard {
-        flex-basis: calc(25% - 18.75px);
+        flex-basis: calc(25% - 18.75px); /* 4 cards per row (100/4 = 25) */
         width: calc(25% - 18.75px);
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 992px) { /* Adjusted breakpoint for 3 cards / mission layout change */
     .pictureCard {
-        flex-basis: calc(33.333% - 16.66px);
+        flex-basis: calc(33.333% - 16.66px); /* 3 cards per row */
         width: calc(33.333% - 16.66px);
     }
     #teampic {
-        max-width: 90%;
+        max-width: 90%; /* Was 90%, seems fine */
+        margin-left: auto; /* Center if it becomes block */
+        margin-right: auto;
     }
     .missionContent {
         flex-direction: column;
@@ -633,71 +692,66 @@ div.pictureCard > h5 {
     .missionText > h1.section-title-shared {
         text-align: center;
     }
+    .footer { /* Adjust footer for better stacking on smaller screens */
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    .footer > div {
+        text-align: center; /* Center text in footer divs when stacked */
+    }
 }
 
 
 @media (max-width: 768px) { /* Tablet and smaller - Hamburger Menu Active */
   .navBar {
     width: 95%;
-    padding: 15px;
-    /* flex-direction: column; No longer needed here, handled by nav-links */
-    /* gap: 5px; No longer needed here */
+    padding: 15px; /* Keep existing padding */
   }
 
   .nav-links {
-    display: none; /* Hide links by default on small screens */
+    display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--secondary-color); /* Or a different color for dropdown */
+    background-color: var(--secondary-color);
     position: absolute;
     top: 100%; /* Position below the navbar */
     left: 0;
     padding: 0;
-    margin-top: 5px; /* Optional: space between navbar and dropdown */
-    border-bottom-left-radius: 15px; /* Optional: match navbar rounding */
-    border-bottom-right-radius: 15px; /* Optional: match navbar rounding */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: add shadow to dropdown */
-    z-index: 999; /* Ensure it's above other content */
+    margin-top: 5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 999;
   }
 
   .nav-links.active {
-    display: flex; /* Show when hamburger is clicked */
+    display: flex;
   }
 
   .nav-links li {
-    margin: 0; /* Remove horizontal margin */
-    width: 100%; /* Make li full width */
-    text-align: center; /* Center text in li */
+    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
-  .navTitle {
-    padding: 15px 20px; /* Larger clickable area for mobile */
-    display: block; /* Make anchor fill li */
+  .navTitle, .navTitle2 { /* Apply to both navTitle and navTitle2 */
+    padding: 15px 20px;
+    display: block;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .navTitle2 {
-    padding: 15px 20px; /* Larger clickable area for mobile */
-    display: block; /* Make anchor fill li */
-    width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+   .nav-links li:last-child .navTitle,
+   .nav-links li:last-child .navTitle2 { /* Apply to both */
+    border-bottom: none;
   }
-   .nav-links li:last-child .navTitle {
-    border-bottom: none; /* Remove border from last item */
-  }
-
 
   .hamburger-menu {
-    display: flex; /* Show hamburger icon */
+    display: flex;
   }
 
   .terminal {
-    /* Adjust if needed, but space-between on .navBar might handle it */
-    /* margin-right: 0; */
-    /* margin-bottom: 10px; Removed as it's inline now */
-    font-size: 1.2rem;
-    /* justify-content: center; */
-    /* width: 100%; */
+    font-size: 1.2rem; /* Slightly smaller for mobile */
   }
 
   .team-content-wrapper, .memberContainer {
@@ -705,11 +759,11 @@ div.pictureCard > h5 {
   }
 
   .rolesList {
-    justify-content: center;
+    /* justify-content: center; /* Already centered */
   }
 
   .pictureCard {
-    flex-basis: calc(50% - 12.5px);
+    flex-basis: calc(50% - 12.5px); /* 2 cards per row */
     width: calc(50% - 12.5px);
   }
 
@@ -723,11 +777,11 @@ div.pictureCard > h5 {
     width: 100%;
     max-width: 550px;
     text-align: center;
-    margin: 0 0 10px 0;
+    margin: 0 0 10px 0; /* Keep existing margin */
   }
 
   .suppText p {
-    font-size: 1.05rem;
+    font-size: 1.05rem; /* Keep existing size */
   }
 
   .form-container {
@@ -736,27 +790,27 @@ div.pictureCard > h5 {
   }
 
   .suppInput {
-    font-size: 16px;
+    font-size: 16px; /* Keep existing size */
   }
 }
 
 @media (max-width: 480px) { /* Mobile */
   body {
-    line-height: 1.5;
+    line-height: 1.5; /* Keep existing line-height */
   }
   #logo {
-    max-width: 280px;
-    margin-top: -30px;
-    margin-bottom: 20px;
+    max-width: 280px; /* Keep existing max-width */
+    margin-top: -30px; /* Keep existing margin */
+    margin-bottom: 20px; /* Keep existing margin */
   }
   .homeText {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(2rem, 8vw, 2.5rem); /* Keep existing font-size */
   }
   .fall {
-    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    font-size: clamp(1.1rem, 5vw, 1.6rem); /* Keep existing font-size */
   }
   .section-title-shared,
-  #team.teamColumn h1.titlesLeft.section-title-shared {
+  #team.teamColumn h1.titlesLeft.section-title-shared { /* Check if this ID usage is intended */
     font-size: clamp(1.6rem, 7vw, 2rem);
     margin-bottom: 25px;
   }
@@ -767,12 +821,11 @@ div.pictureCard > h5 {
   }
 
   .pictureCard {
-    flex-basis: 100%;
+    flex-basis: 100%; /* 1 card per row */
     width: 100%;
-    min-width: unset;
-    /* gap: 15px; This controls gap between cards, not inside a card */
+    min-width: unset; /* Override min-width from larger screens */
   }
-  
+
   div.pictureCard > h4 {
     font-size: 1rem;
   }
@@ -785,7 +838,7 @@ div.pictureCard > h5 {
     font-size: 0.9rem;
   }
 
-  .missionText p, .faqItem p, .suppText p { /* .faqAnswer p was not specific enough */
+  .missionText p, .faqAnswer p, .suppText p { /* Grouped common paragraph styling */
     font-size: 0.9rem;
   }
   .faqQuestion {
@@ -796,9 +849,14 @@ div.pictureCard > h5 {
       font-size: 1.2em;
       margin-right: 10px;
   }
-  .faqAnswer { /* Ensure specificity for smaller screens */
-      padding: 0 15px 15px 40px;
+  .faqAnswer {
+      padding: 0 15px 15px 40px; /* Adjusted padding */
       font-size: 0.9rem;
+  }
+  /* Ensure expanded FAQ answer padding is also adjusted */
+  .faqQuestion[aria-expanded="true"] + .faqAnswer {
+    padding-top: 10px;
+    padding-bottom: 15px;
   }
 
   .suppInput {
@@ -809,28 +867,24 @@ div.pictureCard > h5 {
     font-size: 16px;
   }
   .navBar {
-      padding: 10px 15px; /* Adjusted padding for smaller screens */
+      padding: 10px 15px;
   }
-  .nav-links { /* Ensure dropdown also looks good on very small screens */
-      /* No specific changes needed here if 768px styles are sufficient */
-  }
-  .navTitle { /* Ensure nav titles in dropdown are well-padded */
+  .navTitle, .navTitle2 {
       padding: 12px 15px;
   }
-  .navTitle2 { /* Ensure nav titles in dropdown are well-padded */
-      padding: 12px 15px;
+  .footer {
+    padding: 20px 15px; /* Reduce padding for very small screens */
+  }
+  .footer p {
+      font-size: 0.9rem; /* Slightly smaller text in footer for mobile */
+  }
+  .contactsLogo .icons {
+      width: 22px;
+      height: 22px;
+      margin: 0 5px;
   }
 }
 
-.footer{
-  background-color: var(--secondary-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-
-.footer p{
-  color: var(--third-color);
-  padding: 20px;
+.love{
+  text-decoration: none;
 }

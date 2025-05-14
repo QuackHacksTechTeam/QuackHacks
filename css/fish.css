@@ -1,0 +1,8 @@
+body{
+  background-image: url('../images/fish.JPG'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}

@@ -18,388 +18,395 @@
                 <span></span>
                 <span></span>
             </div>
-            <ul class="nav-links"> 
+            <ul class="nav-links">
                 <li><a href="#mission" class="navTitle">MISSION</a></li>
                 <li><a href="#faq" class="navTitle">FAQ</a></li>
                 <li><a href="#support" class="navTitle" data-text="SUPPORT US">SUPPORT US</a></li>
                 <li><a href="#team" class="navTitle" data-text="TEAM">TEAM</a></li>
-                <li><a href="https://uoregon.fillout.com/quackhackshigh" target="_blank" rel="noopener noreferrer" class="navTitle2" data-text="Register" >REGISTER</a></li>
+                <li><a href="https://uoregon.fillout.com/quackhackshigh" target="_blank" rel="noopener noreferrer" class="navTitle2" data-text="Register">REGISTER</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="home">
-        <img src="../images/transparency.png" id="logo" alt="QuackHacks Logo">
-        <h2 class="homeText">QuackHacks Minors:</h2>
-        <br>
-        <h3 class="fall">UO's First High School Hackathon</h3>
-    </div>
-
-    <div id="mission" class="missionCenter">
-        <div class="missionContent">
-        <img src="../images/QHTeam.JPG" id="teampic" alt="Team Photo">
-            <div class="missionText">
-                <h1 class="section-title-shared">Our Mission</h1>
-                <p>
-                <strong>
-                    QuackHacks is a fully student-run hackathon that empowers students to explore innovation through hands-on, collaborative learning. In a fast-paced and high-energy environment, participants work in teams to build creative projects, enjoy free food and merch, and gain exposure to new technologies through workshops and real-world experience.
-                </strong>
-                </p>
-                <br>
-                <p>
-                    <strong>
-                        As a registered non-profit, QuackHacks is organized by a diverse team of students from fields such as Art, Business, Marketing, and Computer Science. Our commitment to experiential learning extends beyond participants; organizers gain valuable real-world experience in areas like event planning, budgeting, sponsorship, branding, marketing, and software development. Every aspect of QuackHacks is designed to provide meaningful opportunities for students to apply their skills, grow professionally, and make an impact.
-                    </strong>
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="faq" class="faqSection">
-        <h1 class="section-title-shared">FAQ</h1>
-
-        <div class="faqItem">
-            <button class="faqQuestion" aria-expanded="false">
-                <span class="faqIcon">+</span>
-                What is QuackHacks Lite?
-            </button>
-            <div class="faqAnswer" hidden>
-                <p>QuackHacks is an all day hackathon where high school students come together to build projects and learn new skills.</p>
-            </div>
+    <div class="content-wrapper">
+        <div class="home">
+            <img src="../images/transparency.png" id="logo" alt="QuackHacks Logo">
+            <h2 class="homeText">QuackHacks Minors:</h2>
+            <br>
+            <h3 class="fall">UO's First High School Hackathon</h3>
         </div>
 
-        <div class="faqItem">
-            <button class="faqQuestion" aria-expanded="false">
-                <span class="faqIcon">+</span>
-                When is QuackHacks Lite?
-            </button>
-            <div class="faqAnswer" hidden>
-                <p>QuackHacks Lite takes place May 31st, 9am - 6pm. Taking place in the ERB Memorial Union, in the Redwood Auditorium. Attendees mus tbe in-person</p>
-            </div>
-        </div>
-
-        <div class="faqItem">
-            <button class="faqQuestion" aria-expanded="false">
-                <span class="faqIcon">+</span>
-                Who can participate?
-            </button>
-            <div class="faqAnswer" hidden>
-                <p>All High school students are welcome, regardless of experience level.</p>
-            </div>
-        </div>
-
-        <div class="faqItem">
-            <button class="faqQuestion" aria-expanded="false">
-                <span class="faqIcon">+</span>
-                Does it cost anything?
-            </button>
-            <div class="faqAnswer" hidden>
-                <p>Nope! QuackHacks is completely free to attend.</p>
-            </div>
-        </div>
-
-        <div class="faqItem">
-            <button class="faqQuestion" aria-expanded="false">
-                <span class="faqIcon">+</span>
-                Can I start on my project before the hackathon?
-            </button>
-            <div class="faqAnswer" hidden>
-                <p>You cannot work on a project you started before the hackathon. Ideation before the hackathon is allowed, but all implementation must occur during the hackathon.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="suppContainer" id="support">
-        <h1 class="titlesLeft section-title-shared">Got Questions?</h1>
-        <div class="centerSupp">
-            <div class="suppText">
-                <p>
-                    We're here to help. Please check out our FAQ first, and if you still have questions, fill out this form. We'll get back to you as soon as we can!
-                </p>
-            </div>
-            <div class="form-container">
-                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">  <input type="hidden" name="access_key" value="ba884628-ea48-4fb5-944f-f85992cd0079">
-                    <input type="text" name="name" required class="suppInput" placeholder="Name">
+        <div id="mission" class="missionCenter">
+            <div class="missionContent">
+            <img src="../images/QHTeam.JPG" id="teampic" alt="Team Photo">
+                <div class="missionText">
+                    <h1 class="section-title-shared">Our Mission</h1>
+                    <p>
+                        <strong>
+                            QuackHacks is a fully student-run hackathon that empowers students to explore innovation through hands-on, collaborative learning. In a fast-paced and high-energy environment, participants work in teams to build creative projects, enjoy free food and merch, and gain exposure to new technologies through workshops and real-world experience.
+                        </strong>
+                    </p>
                     <br>
-                    <input type="email" name="email" required class="suppInput" placeholder="Email">
-                    <br>
-                    <textarea name="message" required class="suppInput" placeholder="Your Message" rows="5"></textarea>
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    <input type="hidden" name="redirect" value="http://127.0.0.1:5500/pages/index.html#support">
-                    <br>
-                    <button type="submit" class="submitButton">Send Message</button>
-                </form>
-                <div id="formResult"></div> </div>
+                    <p>
+                        <strong>
+                            As a registered non-profit, QuackHacks is organized by a diverse team of students from fields such as Art, Business, Marketing, and Computer Science. Our commitment to experiential learning extends beyond participants; organizers gain valuable real-world experience in areas like event planning, budgeting, sponsorship, branding, marketing, and software development. Every aspect of QuackHacks is designed to provide meaningful opportunities for students to apply their skills, grow professionally, and make an impact.
+                        </strong>
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="rolesCenter">
-        <div class="team-content-wrapper">
-            <div id="team" class="teamColumn">
-                <h1 class="titlesLeft section-title-shared">Meet Our Team</h1> <h2 class="titlesLeft">Here's the team who makes it all happen.</h2>
-            </div>
-            <ul class="rolesList">
-                <li class="roles"><button class="roleFilter">Team</button></li>
-                <li class="roles"><button class="roleFilter">Executives</button></li>
-                <li class="roles"><button class="roleFilter">Design</button></li>
-                <li class="roles"><button class="roleFilter">Finance</button></li>
-                <li class="roles"><button class="roleFilter">Marketing</button></li>
-                <li class="roles"><button class="roleFilter">Operations</button></li>
-                <li class="roles"><button class="roleFilter">Sponsorship</button></li>
-                <li class="roles"><button class="roleFilter">Tech</button></li>
-            </ul>
-        </div>
-        <div class="memberContainer" >
-            <div class="pictureCard" data-role="Executives">
-                <div class="imageWrapper">
-                <img src="../images/noah_weis.JPG" class="memberPictures" style="transform: translateY(-10px) scale(1.1);" alt="Noah Weis">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Noah Weis</h4>
-                <h5>Director & Founder</h5>
-                <div>
-                    <a href="https://www.linkedin.com/in/noahweis/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-                    <a href="https://github.com/noah-weis" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+        <div id="faq" class="faqSection">
+            <h1 class="section-title-shared">FAQ</h1>
+
+            <div class="faqItem">
+                <button class="faqQuestion" aria-expanded="false">
+                    <span class="faqIcon">+</span>
+                    What is QuackHacks Lite?
+                </button>
+                <div class="faqAnswer" hidden>
+                    <p>QuackHacks is an all day hackathon where high school students come together to build projects and learn new skills.</p>
                 </div>
             </div>
-            <div class="pictureCard" data-role="Executives Operations">
-                <div class="imageWrapper">
-                <img src="../images/AdamTestPic.jpg" class="memberPictures" alt="Adam Wolfe">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Adam Wolfe</h4>
-                <h5>Director of Internal Operations, Founder</h5>
-                <a href="https://www.linkedin.com/in/adamdwolfe/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Executives Marketing Design">
-                <div class="imageWrapper">
-                <img src="../images/jaya.JPG" class="memberPictures" alt="Jaya Munoz">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Jaya Munoz</h4>
-                <h5>Director of Marketing & Design, Co-Founder</h5>
-                <a href="https://www.linkedin.com/in/jayamunoz/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Executives Finance Sponsorship">
-                <div class="imageWrapper">
-                <img src="../images/jack_k.JPG" class="memberPictures" alt="Jack Klein">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Jack Klein</h4>
-                <h5>Director of Finance & Sponsorship, Co-Founder</h5>
-                <a href="https://www.linkedin.com/in/jackmklein/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Executives Operations Tech">
-                <div class="imageWrapper">
-                <img src="../images/john_h.JPG" class="memberPictures" alt="John Heibel">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>John Heibel</h4>
-                <h5>Director of Operations & Tech, Founder</h5>
-                <a href="https://www.linkedin.com/in/john-heibel/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Design">
-                <div class="imageWrapper">
-                <img src="../images/brooke.JPG" class="memberPictures" alt="Brooke Hatchman">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Brooke Hatchman</h4>
-                <h5>Brand Artist</h5>
-                <a href="https://www.linkedin.com/in/brooke-hatchman-872041222/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Design">
-                <div class="imageWrapper">
-                <img src="../images/jack_b.JPG" class="memberPictures" alt="Jack Baca">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Jack Baca</h4>
-                <h5>3D Artist</h5>
-                <a href="https://www.linkedin.com/in/jackrbaca/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Design">
-                <div class="imageWrapper">
-                <img src="../images/Noah H.JPG" class="memberPictures" alt="Noah Ham">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Noah Ham</h4>
-                <h5>Videographer & Animator</h5>
-                <a href="https://www.linkedin.com/in/noah-ham/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-             <div class="pictureCard" data-role="Finance">
-                <div class="imageWrapper">
-                <img src="../images/alondra.JPG" class="memberPictures" alt="Alondra Gamboa">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Alondra Gamboa</h4>
-                <h5>Finance Associate</h5>
-                <a href="https://www.linkedin.com/in/alondra-gamboa-9aa2451b0/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Finance">
-                <div class="imageWrapper">
-                <img src="../images/nhi.JPG" class="memberPictures" alt="Nhi Do">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Nhi Do</h4>
-                <h5>Finance Associate</h5>
-                <a href="https://www.linkedin.com/in/nhi-do-8b39b1233/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Sponsorship">
-                <div class="imageWrapper">
-                <img src="../images/alex.JPG" class="memberPictures" alt="Alex Rankine">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Alex Rankine</h4>
-                <h5>Sponsorship Associate</h5>
-                <a href="https://www.linkedin.com/in/alex-rankine-a47ab9180/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Sponsorship">
-                <div class="imageWrapper">
-                <img src="../images/Anthonytestpic.JPG" class="memberPictures" alt="Anthony Cano-Luna">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Anthony Cano-Luna</h4>
-                <h5>Sponsorship Associate</h5>
-                <a href="https://www.linkedin.com/in/anthony-cano-luna-46b55b309/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Sponsorship">
-                <div class="imageWrapper">
-                <img src="../images/emma test pic.JPG" class="memberPictures" alt="Emma Schwing">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Emma Schwing</h4>
-                <h5>Sponsorship Associate</h5>
-                <a href="https://www.linkedin.com/in/emma-schwing-5434a9291/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Tech">
-                <div class="imageWrapper">
-                <img src="../images/AaronTestPic.jpg" class="memberPictures" alt="Aaron Reyes Rodriguez">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Aaron Reyes Rodriguez</h4>
-                <h5>Software Engineer</h5>
-                <a href="https://www.linkedin.com/in/aaron-reyes-rodriguez-4169a7325/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Tech">
-                <div class="imageWrapper">
-                <img src="../images/daniel.JPG" class="memberPictures" alt="Daniel Asiamah">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Daniel Asiamah</h4>
-                <h5>Software Engineer</h5>
-                <div>
-                    <a href="https://www.linkedin.com/in/daniel-asiamah-439ab4281/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+
+            <div class="faqItem">
+                <button class="faqQuestion" aria-expanded="false">
+                    <span class="faqIcon">+</span>
+                    When is QuackHacks Lite?
+                </button>
+                <div class="faqAnswer" hidden>
+                    <p>QuackHacks Lite takes place May 31st, 9am - 6pm. Taking place in the ERB Memorial Union, in the Redwood Auditorium. Attendees mus tbe in-person</p>
                 </div>
             </div>
-            <div class="pictureCard" data-role="Tech">
-                <div class="imageWrapper">
-                <img src="../images/hai.JPG" class="memberPictures" alt="Hai Le">
-                <div class="quoteOverlay">"Innovation through collaboration."</div>
-                </div>
-                <h4>Hai Le</h4>
-                <h5>Software Engineer</h5>
-                <div>
-                    <a href="https://www.linkedin.com/in/hai-le-4b6986244/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-                    <a href="https://github.com/doeroy" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+
+            <div class="faqItem">
+                <button class="faqQuestion" aria-expanded="false">
+                    <span class="faqIcon">+</span>
+                    Who can participate?
+                </button>
+                <div class="faqAnswer" hidden>
+                    <p>All High school students are welcome, regardless of experience level.</p>
                 </div>
             </div>
-            <div class="pictureCard" data-role="Tech">
-                <div class="imageWrapper">
-                <img src="../images/josiah.JPG" class="memberPictures" alt="Josiah Kitchin">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Josiah Kitchin</h4>
-                <h5>Software Engineer</h5>
-                <div>
-                    <a href="https://www.linkedin.com/in/josiah-kitchin-845628306/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-                    <a href="https://github.com/Josiah-Kitchin" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+
+            <div class="faqItem">
+                <button class="faqQuestion" aria-expanded="false">
+                    <span class="faqIcon">+</span>
+                    Does it cost anything?
+                </button>
+                <div class="faqAnswer" hidden>
+                    <p>Nope! QuackHacks is completely free to attend.</p>
                 </div>
             </div>
-            <div class="pictureCard" data-role="Tech Design">
-                <div class="imageWrapper">
-                <img src="../images/miro.JPG" class="memberPictures" alt="Miro Garcia">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
+
+            <div class="faqItem">
+                <button class="faqQuestion" aria-expanded="false">
+                    <span class="faqIcon">+</span>
+                    Can I start on my project before the hackathon?
+                </button>
+                <div class="faqAnswer" hidden>
+                    <p>You cannot work on a project you started before the hackathon. Ideation before the hackathon is allowed, but all implementation must occur during the hackathon.</p>
                 </div>
-                <h4>Miro Garcia</h4>
-                <h5>Software Engineer & Artist</h5>
-                <div>
-                <a href="https://www.linkedin.com/in/mirogarcia/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-                <a href="https://github.com/miropg" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
-                </div>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/Greg.JPG" class="memberPictures" alt="Gregory Morrison">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Gregory Morrison</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/gregmorrison12/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/the-boys.png" class="memberPictures" alt="Luis Hernandez">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Luis Hernandez</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/luis-daniel-hernandez-moreno/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/Noah M.JPG" class="memberPictures" alt="Noah Menachemson">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Noah Menachemson</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/noah-menachemson-6724a82ba/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/trevor.JPG" class="memberPictures" alt="Trevor Robbins">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Trevor Robbins</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/trevor-robbins-67017b330/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/Tara.JPG" class="memberPictures" alt="Tara Disser">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Tara Disser</h4>
-                <h5>Operations</h5>
-                <a href="https://www.linkedin.com/in/taradisser/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Operations">
-                <div class="imageWrapper">
-                <img src="../images/Zef.JPG" class="memberPictures" alt="Zeferino Araiza">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Zeferino Araiza</h4>
-                <h5>Operations,(Oregon Stat*)</h5>
-                <a href="https://www.linkedin.com/in/zeferino-araiza-505901323/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
-            </div>
-            <div class="pictureCard" data-role="Marketing">
-                <div class="imageWrapper">
-                <img src="../images/Ashna.JPG" class="memberPictures" alt="Ashna Rajbhandari">
-                <div class="quoteOverlay">"Big dog gotta Eat."</div>
-                </div>
-                <h4>Ashna Rajbhandari</h4>
-                <h5>Marketing</h5>
-                <a href="https://www.linkedin.com/in/ashnarajbhandari/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
             </div>
         </div>
-    </div>
-    <footer class="footer">
+
+        <div class="suppContainer" id="support">
+            <h1 class="titlesLeft section-title-shared">Got Questions?</h1>
+            <div class="centerSupp">
+                <div class="suppText">
+                    <p>
+                        We're here to help. Please check out our FAQ first, and if you still have questions, fill out this form. We'll get back to you as soon as we can!
+                    </p>
+                </div>
+                <div class="form-container">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="ba884628-ea48-4fb5-944f-f85992cd0079">
+                        <input type="text" name="name" required class="suppInput" placeholder="Name">
+                        <br>
+                        <input type="email" name="email" required class="suppInput" placeholder="Email">
+                        <br>
+                        <textarea name="message" required class="suppInput" placeholder="Your Message" rows="5"></textarea>
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="hidden" name="redirect" value="http://127.0.0.1:5500/pages/index.html#support">
+                        <br>
+                        <button type="submit" class="submitButton">Send Message</button>
+                    </form>
+                    <div id="formResult"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rolesCenter">
+            <div class="team-content-wrapper">
+                <div id="team" class="teamColumn">
+                    <h1 class="titlesLeft section-title-shared">Meet Our Team</h1> <h2 class="titlesLeft">Here's the team who makes it all happen.</h2>
+                </div>
+                <ul class="rolesList">
+                    <li class="roles"><button class="roleFilter">Team</button></li>
+                    <li class="roles"><button class="roleFilter">Executives</button></li>
+                    <li class="roles"><button class="roleFilter">Design</button></li>
+                    <li class="roles"><button class="roleFilter">Finance</button></li>
+                    <li class="roles"><button class="roleFilter">Marketing</button></li>
+                    <li class="roles"><button class="roleFilter">Operations</button></li>
+                    <li class="roles"><button class="roleFilter">Sponsorship</button></li>
+                    <li class="roles"><button class="roleFilter">Tech</button></li>
+                </ul>
+            </div>
+            <div class="memberContainer" >
+                <div class="pictureCard" data-role="Executives">
+                    <div class="imageWrapper">
+                    <img src="../images/noah_weis.JPG" class="memberPictures" style="transform: translateY(-10px) scale(1.1);" alt="Noah Weis">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Noah Weis</h4>
+                    <h5>Director & Founder</h5>
+                    <div>
+                        <a href="https://www.linkedin.com/in/noahweis/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                        <a href="https://github.com/noah-weis" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="pictureCard" data-role="Executives Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/AdamTestPic.jpg" class="memberPictures" alt="Adam Wolfe">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Adam Wolfe</h4>
+                    <h5>Director of Internal Operations, Founder</h5>
+                    <a href="https://www.linkedin.com/in/adamdwolfe/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Executives Marketing Design">
+                    <div class="imageWrapper">
+                    <img src="../images/jaya.JPG" class="memberPictures" alt="Jaya Munoz">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Jaya Munoz</h4>
+                    <h5>Director of Marketing & Design, Co-Founder</h5>
+                    <a href="https://www.linkedin.com/in/jayamunoz/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Executives Finance Sponsorship">
+                    <div class="imageWrapper">
+                    <img src="../images/jack_k.JPG" class="memberPictures" alt="Jack Klein">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Jack Klein</h4>
+                    <h5>Director of Finance & Sponsorship, Co-Founder</h5>
+                    <a href="https://www.linkedin.com/in/jackmklein/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Executives Operations Tech">
+                    <div class="imageWrapper">
+                    <img src="../images/john_h.JPG" class="memberPictures" alt="John Heibel">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>John Heibel</h4>
+                    <h5>Director of Operations & Tech, Founder</h5>
+                    <a href="https://www.linkedin.com/in/john-heibel/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Design">
+                    <div class="imageWrapper">
+                    <img src="../images/brooke.JPG" class="memberPictures" alt="Brooke Hatchman">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Brooke Hatchman</h4>
+                    <h5>Brand Artist</h5>
+                    <a href="https://www.linkedin.com/in/brooke-hatchman-872041222/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Design">
+                    <div class="imageWrapper">
+                    <img src="../images/jack_b.JPG" class="memberPictures" alt="Jack Baca">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Jack Baca</h4>
+                    <h5>3D Artist</h5>
+                    <a href="https://www.linkedin.com/in/jackrbaca/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Design">
+                    <div class="imageWrapper">
+                    <img src="../images/Noah H.JPG" class="memberPictures" alt="Noah Ham">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Noah Ham</h4>
+                    <h5>Videographer & Animator</h5>
+                    <a href="https://www.linkedin.com/in/noah-ham/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Finance">
+                    <div class="imageWrapper">
+                    <img src="../images/alondra.JPG" class="memberPictures" alt="Alondra Gamboa">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Alondra Gamboa</h4>
+                    <h5>Finance Associate</h5>
+                    <a href="https://www.linkedin.com/in/alondra-gamboa-9aa2451b0/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Finance">
+                    <div class="imageWrapper">
+                    <img src="../images/nhi.JPG" class="memberPictures" alt="Nhi Do">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Nhi Do</h4>
+                    <h5>Finance Associate</h5>
+                    <a href="https://www.linkedin.com/in/nhi-do-8b39b1233/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Sponsorship">
+                    <div class="imageWrapper">
+                    <img src="../images/alex.JPG" class="memberPictures" alt="Alex Rankine">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Alex Rankine</h4>
+                    <h5>Sponsorship Associate</h5>
+                    <a href="https://www.linkedin.com/in/alex-rankine-a47ab9180/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Sponsorship">
+                    <div class="imageWrapper">
+                    <img src="../images/Anthonytestpic.JPG" class="memberPictures" alt="Anthony Cano-Luna">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Anthony Cano-Luna</h4>
+                    <h5>Sponsorship Associate</h5>
+                    <a href="https://www.linkedin.com/in/anthony-cano-luna-46b55b309/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Sponsorship">
+                    <div class="imageWrapper">
+                    <img src="../images/emma test pic.JPG" class="memberPictures" alt="Emma Schwing">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Emma Schwing</h4>
+                    <h5>Sponsorship Associate</h5>
+                    <a href="https://www.linkedin.com/in/emma-schwing-5434a9291/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Tech">
+                    <div class="imageWrapper">
+                    <img src="../images/AaronTestPic.jpg" class="memberPictures" alt="Aaron Reyes Rodriguez">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Aaron Reyes Rodriguez</h4>
+                    <h5>Software Engineer</h5>
+                    <a href="https://www.linkedin.com/in/aaron-reyes-rodriguez-4169a7325/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Tech">
+                    <div class="imageWrapper">
+                    <img src="../images/daniel.JPG" class="memberPictures" alt="Daniel Asiamah">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Daniel Asiamah</h4>
+                    <h5>Software Engineer</h5>
+                    <div>
+                        <a href="https://www.linkedin.com/in/daniel-asiamah-439ab4281/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="pictureCard" data-role="Tech">
+                    <div class="imageWrapper">
+                    <img src="../images/hai.JPG" class="memberPictures" alt="Hai Le">
+                    <div class="quoteOverlay">"Innovation through collaboration."</div>
+                    </div>
+                    <h4>Hai Le</h4>
+                    <h5>Software Engineer</h5>
+                    <div>
+                        <a href="https://www.linkedin.com/in/hai-le-4b6986244/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                        <a href="https://github.com/doeroy" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="pictureCard" data-role="Tech">
+                    <div class="imageWrapper">
+                    <img src="../images/josiah.JPG" class="memberPictures" alt="Josiah Kitchin">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Josiah Kitchin</h4>
+                    <h5>Software Engineer</h5>
+                    <div>
+                        <a href="https://www.linkedin.com/in/josiah-kitchin-845628306/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                        <a href="https://github.com/Josiah-Kitchin" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="pictureCard" data-role="Tech Design">
+                    <div class="imageWrapper">
+                    <img src="../images/miro.JPG" class="memberPictures" alt="Miro Garcia">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Miro Garcia</h4>
+                    <h5>Software Engineer & Artist</h5>
+                    <div>
+                    <a href="https://www.linkedin.com/in/mirogarcia/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                    <a href="https://github.com/miropg" target="_blank"><img src="../images/github.png" class="icons" alt="GitHub"></a>
+                    </div>
+                </div>
+                <div class="pictureCard" data-role="Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/Greg.JPG" class="memberPictures" alt="Gregory Morrison">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Gregory Morrison</h4>
+                    <h5>Operations</h5>
+                    <a href="https://www.linkedin.com/in/gregmorrison12/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/the-boys.png" class="memberPictures" alt="Luis Hernandez">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Luis Hernandez</h4>
+                    <h5>Operations</h5>
+                    <a href="https://www.linkedin.com/in/luis-daniel-hernandez-moreno/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/Noah M.JPG" class="memberPictures" alt="Noah Menachemson">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Noah Menachemson</h4>
+                    <h5>Operations</h5>
+                    <a href="https://www.linkedin.com/in/noah-menachemson-6724a82ba/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/trevor.JPG" class="memberPictures" alt="Trevor Robbins">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Trevor Robbins</h4>
+                    <h5>Operations</h5>
+                    <a href="https://www.linkedin.com/in/trevor-robbins-67017b330/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Operations"> <div class="imageWrapper">
+                    <img src="../images/Tara.JPG" class="memberPictures" alt="Tara Disser">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Tara Disser</h4>
+                    <h5>Operations</h5> <a href="https://www.linkedin.com/in/taradisser/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Operations">
+                    <div class="imageWrapper">
+                    <img src="../images/Zef.JPG" class="memberPictures" alt="Zeferino Araiza">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Zeferino Araiza</h4>
+                    <h5>Operations,(Oregon Stat*)</h5>
+                    <a href="https://www.linkedin.com/in/zeferino-araiza-505901323/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+                <div class="pictureCard" data-role="Marketing">
+                    <div class="imageWrapper">
+                    <img src="../images/Ashna.JPG" class="memberPictures" alt="Ashna Rajbhandari">
+                    <div class="quoteOverlay">"Big dog gotta Eat."</div>
+                    </div>
+                    <h4>Ashna Rajbhandari</h4>
+                    <h5>Marketing</h5>
+                    <a href="https://www.linkedin.com/in/ashnarajbhandari/" target="_blank"><img src="../images/linkedin.svg" class="icons" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </div>
+    </div> <footer class="footer">
         <div>
-            <p>Made with love ♡ - QuackHacks Tech Team</p>
+             <a href="fish.html" class="love"><p>Made with love ♡ - QuackHacks Tech Team</p></a>
         </div>
-        <div>
+        <div class="contactsFooter">
             <p>CONTACT</p>
-            <p>main@quackhacks.org</p>
+           <p>main@quackhacks.org</p>
+            <div class="contactsLogo">
+                <a href="https://www.instagram.com/quackhacksuo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><img src="../images/instagram.png" alt="instagram logo" class="icons"></a>
+                <a href="https://discord.gg/J2FbNzKMPw" target="_blank" rel="noopener noreferrer"><img src="../images/discord.png" alt="discord logo" class="icons"></a>
+                <a href="https://www.linkedin.com/company/quackhacks/" target="_blank" rel="noopener noreferrer"><img src="../images/linkedin.png" alt="linkedin logo" class="icons"></a>
+                <a href="https://www.facebook.com/people/QuackHacks/61576182866684/" target="_blank" rel="noopener noreferrer"><img src="../images/facebook.png" alt="facebook logo" class="icons"></a>
+            </div>
         </div>
     </footer>
     <script src="../javascript/main.js"></script>
-    </body>
+</body>
 </html>
