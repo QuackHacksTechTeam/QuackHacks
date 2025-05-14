@@ -175,10 +175,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 45px 20px 60px 20px;
-  margin-top: 20px;
+  padding: 45px 20px 60px 20px; /* You might adjust top/bottom padding if needed with 100vh */
+  /* margin-top: 20px; */ /* Consider removing or adjusting this if you want it flush to the top */
   text-align: center;
+  min-height: 100vh; /* This is the key addition */
+  width: 100%; /* Ensure it spans the full width */
 }
+
 
 #logo {
   height: auto;
